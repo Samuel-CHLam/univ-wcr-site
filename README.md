@@ -1,4 +1,4 @@
-# univ-site
+# University College Website
 
 This project was bootstrapped with [Frontity](https://frontity.org/).
 
