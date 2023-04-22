@@ -1,80 +1,51 @@
-# University College Website
+# University College WCR Website
 
-This project was bootstrapped with [Frontity](https://frontity.org/).
+> We thank MIT Web.Lab for providing the skeleton code for the website.
 
-#### Table of Contents
+Note that the project has been ejected from the usual React packages, so the usual commands like `npm start` may not work as expected, see below.
 
-- [Launch a development server](#launch-a-development-server)
-- [Create your custom theme](#create-your-custom-theme)
-- [Create a production-ready build](#create-a-production-ready-build)
-- [Deploy](#deploy)
+# How to run this skeleton
+- Open two seperate terminals: 
+    1. `npm run hotloader` in the first, and 
+    2. `npm start` in the second.
+- Then open http://localhost:5050
 
-### Launch a development server
+> The above command will only work if the following setups have been done:
+> - You have a bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
+> - NodeJS version over 18. If it is installed correctly, typing `node --version` should give version over 18.13.0 and `npm --version` should give version over 8.19.3
+> - Visual Studio Code (or another code editor), with the Prettier VSCode extension
+> Please refer to [this document](https://bit.ly/weblab-install) for installation
+
+# Todo: authentication
+> If using Google OAuth, you will need to obtain a CLIENT_ID, instructions are at https://bit.ly/gauth-mit. Then,
+> - Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID, and
+> - Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)
+
+But we will use Microsoft Azure AD, so steps will be different.
+
+# Todo: database setup
+Once a new account for the website has been setup, the following steps need to be changed.
+- Change the Database SRV (mongoConnectionURL) for Atlas (server.js). You got this in the MongoDB setup. remember to replace <password> and <dbname> (should be no < or > in your SRV) (From: https://bit.ly/mongo-setup)
+- Change the Database Name for MongoDB to whatever you put in the SRV to replace <dbname> (server.js)
+
+# Todo: actual development
+Check out this [How to Get Started Guide](http://weblab.is/get-started) -->
+
+## Edit at your own risk
+
+the following files students do not need to edit. feel free to read them if you would like.
 
 ```
-npx frontity dev
+client/src/index.js
+client/src/utilities.js
+client/src/client-socket.js
+server/validator.js
+server/server-socket.js
+.babelrc
+.npmrc
+.prettierrc
+package-lock.json
+webpack.config.js
 ```
 
-Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
-
-The site will automatically reload if you make changes inside the `packages` folder. You will see the build errors in the console.
-
-> Have a look at our [Quick Start Guide](https://docs.frontity.org/getting-started/quick-start-guide)
-
-### Create your custom theme
-
-```
-npx frontity create-package your-custom-theme
-```
-
-Use the command `npx frontity create-package` to create a new package that can be set in your `frontity.settings.js` as your theme.
-
-> Have a look at our blog post [How to Create a React WordPress Theme in 30 Minutes](https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/)
-
-### Create a production-ready build
-
-```
-npx frontity build
-```
-
-Builds the app for production to the `build` folder.
-
-This will create a `/build` folder with a `server.js` (a [serverless function](https://vercel.com/docs/v2/serverless-functions/introduction)) file and a `/static` folder with all your javascript files and other assets.
-
-Your app is ready to be deployed.
-
-> Get more info about [Frontity's architecture](https://docs.frontity.org/architecture)
-
-### Deploy
-
-With the files generated in the _build_ you can deploy your project.
-
-#### As a node app
-
-Use `npx frontity serve` to run it like a normal Node app.
-
-This command generates (and runs) a small web server that uses the generated `server.js` and `/static` to serve your content.
-
-#### As a serverless service
-
-Upload your `static` folder to a CDN and your `server.js` file to a serverless service, like Vercel or Netlify.
-
-> Get more info about [how to deploy](https://docs.frontity.org/deployment) a Frontity project
-
----
-
-## Frontity Community
-
-[![Community Forum Topics](https://img.shields.io/discourse/topics?color=blue&label=community%20forum&server=https%3A%2F%2Fcommunity.frontity.org%2F)](https://community.frontity.org/) [![Twitter: frontity](https://img.shields.io/twitter/follow/frontity?style=social)](https://twitter.com/frontity) [![Frontity GitHub Stars](https://img.shields.io/github/stars/frontity/frontity?style=social)](https://github.com/frontity/frontity)
-
-👋 &nbsp;We'd love for you to be part of the Frontity community. There are a variety of different ways in which you can find more information about the project, join in discussions about it, and also get involved:
-
-- **[Learn Frontity](https://frontity.org/learn/)**: in this page you can find Frontity's primary learning resources, including documentation resources, example projects, videos, and more.
-- **[Community forum](https://community.frontity.org/)**: Frontity's forum is a great place to ask questions, help fellow Frontity users, and share your projects. It's also where you can keep track of the development work, join feature discussions, and collaborate on building Frontity itself.
-- **[GitHub](https://github.com/frontity/frontity)**: for bug reports and code contributions. Questions are answered in the community forum.
-
-If you're looking for news and updates about Frontity, [Twitter](https://twitter.com/frontity) and the [blog](https://frontity.org/blog/) are pretty good places to start. You can also join the **[Frontity Newsletter](https://frontity.org/newsletter/)** and stay updated on new releases and features, learning resources, and community news.
-
-### Contributing
-
-Frontity welcomes contributions in all forms. There are many different ways to support the project. Check out the **[How to contribute](https://docs.frontity.org/contributing/how-to-contribute)** page for ideas on contributing and helping make Frontity better.
+## Good luck on your project :)
