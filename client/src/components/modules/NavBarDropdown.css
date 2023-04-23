@@ -1,0 +1,49 @@
+/* Trigger value - 1240px */
+
+.navbardropdown-menu {
+    width: 200px;
+    position: absolute;
+    top: 80px;
+    list-style: none;
+    text-align: start;
+    padding: 0;
+    margin: 0;
+}
+
+.navbardropdown-menu .clicked {
+    display: none;
+}
+
+.navbardropdown-link {
+    display: block;
+    background: var(--extradarkgrey);
+    text-decoration: none;
+    color: var(--darkgrey);
+    padding: 1rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+.navbardropdown-link:hover {
+  color: white;
+  background: var(--blue);
+  padding: 1rem 0.75rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .navbardropdown-menu {
+    width: 100%;
+    position: static;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbardropdown-link {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .fa-caret-down {
+    display: none;
+  }
+}

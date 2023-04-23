@@ -14,16 +14,20 @@
 * much after initial creation.
 */
 
-/* TODO: REPLACE WITH YOUR OWN FONT! */
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+/* List of fonts - Lato, OpenSans, Nobile*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nobile:ital,wght@1,500&family=Open+Sans&display=swap');
 
 :root {
-  --primary: #396dff;
-  --primary--dim: #6987db;
-  --darkgrey: #d4d4d4;
-  --medgrey: #e0e0e0;
-  --grey: #f7f7f7;
-  --white: #fff;
+  --primary: rgb(0,59,121);
+  --secondary: rgb(251,189,26);
+  --red: rgb(229,52,44);
+  --blue: rgb(122,178,221);
+  --grey: rgb(196,197,198);
+  --violet: #941276;
+  --extradarkgrey: #454545;
+  --darkgrey: #aaaaaa;
+  --medgrey: #d1d1d1;
+  --lightgrey: #f7f7f7;
 
   --xs: 4px;
   --s: 8px;
@@ -34,12 +38,54 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
+  font-size: 18px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 0;
+  letter-spacing: -.025rem;
+}
+
+p {
+  margin-top: 0;
 }
 
 form {
   flex-grow: 1;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+b {
+  letter-spacing: -.025em;
+}
+
+.App-container {
+  margin: 0 0 40px 0;
+}
+
+.u-nomargin {
+  margin: 0;
+}
+
+.u-nopadding {
+  padding: 0;
+}
+
+.u-block{
+  position: relative;
+  width: 80%;
+  padding: 0 10% 0% 10%;
+  margin-top: 1.5rem;
 }
 
 .u-flex {
@@ -53,6 +99,10 @@ form {
 
 .u-flex-justifyCenter {
   justify-content: center;
+}
+
+.u-flex-justifySpace {
+  justify-content: space-between;
 }
 
 .u-flex-alignCenter {
@@ -87,4 +137,17 @@ form {
 
 .u-link:hover {
   color: var(--primary--dim);
+}
+
+.u-ordinarybutton {
+  font-size: 100%;
+  font-family: inherit;
+  margin: 0;
+  padding: 0px 4px;
+  border: none;
+  background: none;
+}
+
+.u-margin-top {
+  margin-top: 12px;
 }

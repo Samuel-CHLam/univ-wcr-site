@@ -1,0 +1,130 @@
+/* Trigger value - 1240px */
+
+.navbar-container {
+    background-color: var(--primary);
+    height: 80px;
+    box-shadow: 0 8px 10px -6px rgb(49, 49, 49);
+    z-index: 1;
+    position: sticky;
+    top: 0px;
+    padding-inline: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.navbar-title {
+  display: flex;
+  flex-direction: row;
+  justify-self: start;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  padding: var(--s) 0;
+  color: white;
+  font-family: "Open Sans";
+}
+
+.navbar-title:hover, .navbar-title:visited {
+  color: white;
+}
+
+.navbar-logo-container {
+  margin-right: 1ch;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.navbar-logo {
+  height: 56px;
+}
+
+.navbar-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 0.5rem;
+  list-style: none;
+  text-align: center;
+  justify-content: end;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-item > button {
+  padding: .5rem;
+  background-color: var(--blue);
+  border: none;
+  border-radius: .2rem;
+  font-size: .8rem;
+}
+
+.navbar-links {
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--lightgrey);
+}
+
+.navbar-links:hover {
+  transition: all 0.2s ease-out;
+  color: var(--blue);
+}
+
+.navbar-menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 1240px) {
+  .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-gap: 0;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    height: auto;
+  }
+
+  .navbar-menu.active {
+    background: black;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .navbar-item {
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    text-align: center;
+    padding: .8rem 0;
+    width: 100%;
+    display: table;
+    font-size: 1rem;
+  }
+
+  .navbar-links:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .navbar-menu-icon {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+  }
+}
