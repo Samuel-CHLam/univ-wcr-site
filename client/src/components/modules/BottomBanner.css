@@ -1,0 +1,54 @@
+.BottomBanner {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-inline: 0;
+    top: 5rem;
+    background-color: var(--primary);
+    color: white;
+}
+
+.BottomBanner > * + * {
+    margin-top: 1rem;
+}
+
+.BottomBanner-unionlogo .BottomBanner-socialogo {
+    margin-inline: auto;
+}
+
+.BottomBanner-unionlogo > a {
+    display: inline-block;
+}
+
+.BottomBanner-unionlogo > a > img {
+    height: 5rem;
+}
+
+.BottomBanner-sociallogo > a {
+    display: inline-block;
+}
+
+.BottomBanner-sociallogo > a > img {
+    height: 1.5rem;
+}
+
+.BottomBanner-unionlogo > * + * {
+    margin-left: 1em;
+}
+
+.BottomBanner-sociallogo > * + * {
+    margin-left: 0.75em;
+}
+
+.BottomBanner-description > p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.author, .author:hover, .author:visited {
+    color: var(--grey);
+}
+
+.BottomBanner-description > p + p {
+    margin-top: 0.3rem;
+}

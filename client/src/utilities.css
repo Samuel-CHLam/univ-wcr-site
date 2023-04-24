@@ -85,8 +85,35 @@ b {
   position: relative;
   width: 80%;
   padding: 0 10% 0% 10%;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
+
+.u-block > h1:before {
+  content: "";
+  display: block;
+  height: 0.25rem;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  opacity: 1;
+  background-color: currentColor;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  animation: 1.5s cubic-bezier(0,0,0,1) 0s 1 section-title-line
+}
+
+@keyframes section-title-line {
+  0% {
+    transform: scaleX(0);
+    -ms-transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+    -ms-transform: scaleX(1);
+  }
+  }
+
 
 .u-flex {
   display: flex;
@@ -150,4 +177,32 @@ b {
 
 .u-margin-top {
   margin-top: 12px;
+}
+
+.u-b-primary {
+  background-color: var(--primary)
+}
+
+.u-b-secondary {
+  background-color: var(--secondary)
+}
+
+.u-b-blue {
+  background-color: var(--blue)
+}
+
+.u-b-red {
+  background-color: var(--red)
+}
+
+.u-b-violet {
+  background-color: var(--violet)
+}
+
+.u-b-white {
+  background-color: white
+}
+
+.u-b-grey {
+  background-color: var(--grey)
 }

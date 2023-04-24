@@ -7,7 +7,7 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import "../../utilities.css";
 import "./NavBar.css";
 
-import univLogo from "../../img/univ_192x192.png";
+import univLogo from "../../img/logo/univ_192x192.png";
 
 function NavBar ({ userId, handleLogin, handleLogout }) {
 
@@ -61,16 +61,19 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
           </div>
 
           <ul className={click ? "navbar-menu active" : "navbar-menu"}>
+            <li className="navbar-item"> 
+              <Link to="/about" className="navbar-links" onClick={collapseAfterClick}>About</Link></li>
+
             <li className="navbar-item" onClick={collapseAfterClick}> 
-              <Link to="/research" className="navbar-links">News</Link>
+              <Link to="/news" className="navbar-links">News</Link>
             </li>
 
             <li className="navbar-item" onClick={collapseAfterClick}> 
-              <Link to="/teaching" className="navbar-links">What's on</Link>
+              <Link to="/whatson" className="navbar-links">What's on</Link>
             </li>
 
             <li className="navbar-item"> 
-              <Link to="/christian" className="navbar-links" onClick={collapseAfterClick}>Governance</Link></li>
+              <Link to="/governance" className="navbar-links" onClick={collapseAfterClick}>Governance</Link></li>
 
             {/* <li className="navbar-item" onMouseEnter={onMouseEnterCV} onMouseLeave={onMouseLeaveCV}> 
               <Link to="/cv" className="navbar-links">

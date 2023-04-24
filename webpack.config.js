@@ -49,12 +49,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/,
-        use: [
-          {
-            loader: "url-loader",
-          },
-        ],
+        test: /\.(png|svg|jpg|gif)$/,
+        type: 'asset/resource',
       },
       {
         test: /\.(pdf)$/,

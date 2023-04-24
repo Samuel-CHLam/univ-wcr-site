@@ -4,8 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 import NavBar from "./modules/NavBar.js";
+import BottomBanner from "./modules/BottomBanner.js";
+
 import NotFound from "./pages/NotFound.js";
+import Accessibility from "./pages/Accessibility.js";
 import Home from "./pages/Home.js";
+import About from "./pages/About.js";
 
 import "../utilities.css";
 
@@ -45,8 +49,11 @@ const App = () => {
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId}/>
       <Routes>
         <Route path="/" element={<Home path="/" />} />
+        <Route path="/about" element={<About path="/about" />} />
+        <Route path="/privacyaccessibility" element={<Accessibility path="/privacyaccessibility" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <BottomBanner />
     </>
   );
 };

@@ -1,26 +1,46 @@
-import React from "react";
+import React, { Component } from "react";
+// import { Fade } from "react-awesome-reveal";
 
-import "../../utilities.css";
+import "../../utilities.css"
 import "./Home.css";
+import Triplet from "../modules/Triplet.js";
+import TopBanner from "../modules/TopBanner";
+import TopBannerImage from "../../img/topbanner/crossrail.jpg";
 
-const Skeleton = () => {
-  return (
-    <>
-      <h1>Good luck on your project :)</h1>
-      <h2> What you need to change in this skeleton</h2>
-      <ul>
-        <li>
-          Change the Frontend CLIENT_ID (Skeleton.js) to your team's CLIENT_ID (obtain this at
-          http://weblab.us/clientid)
-        </li>
-        <li>Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)</li>
-      </ul>
-      <h2>How to go from this skeleton to our actual app</h2>
-      <a href="https://docs.google.com/document/d/110JdHAn3Wnp3_AyQLkqH2W8h5oby7OVsYIeHYSiUzRs/edit?usp=sharing">
-        Check out this getting started guide
-      </a>
-    </>
-  );
-};
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-export default Skeleton;
+  componentDidMount() {
+    // remember -- api calls go here!
+  }
+
+  render() {
+    return (
+      <div>
+        {/* Banner Picture */}
+        <TopBanner background={TopBannerImage} title="Home" content="Welcome to the University College WCR" />
+          {/* Intro */}
+          
+          <div className="u-block">
+            <h1> We are a vibrant and diverse community of graduate students at the University College, Oxford.</h1>
+            <p>
+            The WCR has a double meaning: it refers to the graduate body of students at University College and also 
+            to the physical space in the College where graduate students can relax and socialise. It is an engaging 
+            and diverse community of early-researchers consisting around 150 members across all year groups and subjects. 
+            Whether you are here for a one/two-year Masters programme or a DPhil programme we do hope you choose to get 
+            involved with college life!
+            </p>
+          </div>
+
+          <div className="u-block u-block--narrow">
+            <Triplet />
+          </div>
+      </div>
+    );
+  }
+}
+
+export default Home;

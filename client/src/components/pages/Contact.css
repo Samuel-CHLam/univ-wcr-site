@@ -1,0 +1,38 @@
+.Contact-banner {
+    background-image: url(../../img/topbanner/temp_info.jpg);
+    background-position: top;
+}
+
+.Contact-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 1rem;
+    margin-inline: auto;
+    width: min(80%, 400px);
+}
+
+@media (min-width: 800px) {
+    .Contact-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 750px;
+    }
+}
+
+.Contact-logoAndDes {
+    display: flex;
+    align-items: center;
+}
+
+.Contact-logoAndDes > * + * {
+    margin-left: 1em;
+}
+
+.Contact-Des {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    /* width: 160px; */
+}
+
+
