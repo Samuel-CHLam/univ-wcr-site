@@ -81,6 +81,11 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
                 {dropdownCV && <NavBarDropdown menuItems={cvSubpages} />}
             </li> */}
 
+            {userId ? (
+              <li className="navbar-item">
+                <Link to="/profile" className="navbar-links" onClick = {collapseAfterClick}>Your profile</Link></li>
+            ) : (<></>)}
+
             <li className="navbar-item">
               {userId ? (
                 <button onClick={() => {googleLogout(); handleLogout();}}> Logout </button>

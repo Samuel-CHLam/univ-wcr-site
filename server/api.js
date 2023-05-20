@@ -18,6 +18,7 @@ const auth = require("./auth");
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
 
+// login api
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
 router.get("/whoami", (req, res) => {
@@ -25,20 +26,23 @@ router.get("/whoami", (req, res) => {
     // not logged in
     return res.send({});
   }
-
   res.send(req.user);
 });
 
-router.post("/initsocket", (req, res) => {
-  // do nothing if user not logged in
-  if (req.user)
-    socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
-  res.send({});
-});
+// event api
 
-// |------------------------------|
-// | write your API methods below!|
-// |------------------------------|
+// post api
+
+// student union api
+
+// user api
+router.get("/user", (req, res) => {
+  // console.log(`Succesfully received id: ${req.query.userId}, now find information.`)
+  User.findById(req.query.userId).then((user) => {
+    res.send(user)
+    console.log(`user information sent!`)
+  });
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {

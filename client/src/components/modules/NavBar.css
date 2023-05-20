@@ -41,9 +41,8 @@
 }
 
 .navbar-menu {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
   list-style: none;
   text-align: center;
   justify-content: end;
@@ -56,6 +55,7 @@
   display: flex;
   align-items: center;
   height: 100%;
+  margin-inline: .25rem;
 }
 
 .navbar-item > button {
@@ -82,7 +82,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 800px) {
   .navbar-menu {
     display: flex;
     flex-direction: column;
