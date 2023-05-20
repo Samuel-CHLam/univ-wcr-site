@@ -23,11 +23,12 @@
   --red: rgb(229,52,44);
   --blue: rgb(122,178,221);
   --grey: rgb(196,197,198);
-  --violet: #941276;
-  --extradarkgrey: #454545;
-  --darkgrey: #aaaaaa;
+  --violet: rgb(148,18,118);
+  --extradarkgrey: rgb(69,69,69);
+  --darkgrey: rgb(170,170,170);
   --medgrey: #d1d1d1;
   --lightgrey: #f7f7f7;
+  --white: #ffffff;
 
   --xs: 4px;
   --s: 8px;
