@@ -8,43 +8,29 @@ import TopBanner from "../modules/TopBanner";
 import ContentBlock from "../modules/ContentBlock";
 import TopBannerImage from "../../img/topbanner/eurovision.png";
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {
-    // remember -- api calls go here!
-  }
-
-  render() {
-    return (
-      <div>
-        {/* Banner Picture */}
-        <TopBanner 
-          backgroundImage={TopBannerImage} 
-          bgColorKey="black" 
-          title="Home" 
-          content="Welcome to the University College WCR" />
-
-        {/* Intro */}
-        
-        <ContentBlock title="Who are we?">
-          <p>
-            The WCR has a double meaning: it refers to the graduate body of students at University College and also 
-            to the physical space in the College where graduate students can relax and socialise. It is an engaging 
-            and diverse community of early-researchers consisting around 150 members across all year groups and subjects. 
-            Whether you are here for a one/two-year Masters programme or a DPhil programme we do hope you choose to get 
-            involved with college life!
-          </p>
-          <div className="u-block u-block--narrow">
-            <Triplet />
-          </div>
-        </ContentBlock>
-      </div>
-    );
-  }
+const Home = () => {
+  return (
+    <>
+      <TopBanner 
+        backgroundImage={TopBannerImage} 
+        bgColorKey="black" 
+        title="Home" 
+        content="Welcome to the University College WCR" />
+      
+      <ContentBlock title="Who are we?">
+        <p>
+          The WCR has a double meaning: it refers to the graduate body of students at University College and also 
+          to the physical space in the College where graduate students can relax and socialise. It is an engaging 
+          and diverse community of early-researchers consisting around 150 members across all year groups and subjects. 
+          Whether you are here for a one/two-year Masters programme or a DPhil programme we do hope you choose to get 
+          involved with college life!
+        </p>
+        <div className="u-block u-block--narrow">
+          <Triplet />
+        </div>
+      </ContentBlock>
+    </>
+  );
 }
 
 export default Home;
