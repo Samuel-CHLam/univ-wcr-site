@@ -1,35 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "../../utilities.css"
 import "./Triplet.css";
 
-class Triplet extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-    }
-    
-    componentDidMount() {
-      // remember -- api calls go here!
-    }
+const Triplet = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
-    scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    };
+  return (
+    <div className="Triplet-container">
+      <div className="u-b-secondary Triplet-link-black"> <Link onClick={() => scrollToTop()} to="/about">Learn More</Link> </div>
+      <div className="u-b-primary Triplet-link-white"> <a href="https://forms.office.com/r/2vTvALSNBx" className="">Contact us</a> </div>
+    </div>
+  );
+}
   
-    render() {
-      return (
-        <div className="Triplet-container">
-          <div className="u-b-secondary Triplet-link-black"> <Link onClick={() => this.scrollToTop()} to="/about">Learn More</Link> </div>
-          <div className="u-b-primary Triplet-link-white"> <a href="https://forms.office.com/r/2vTvALSNBx" className="">Contact us</a> </div>
-        </div>
-      );
-    }
-  }
-  
-  export default Triplet;
+export default Triplet;
   
