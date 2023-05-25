@@ -6,6 +6,7 @@ import "./About.css";
 import TopBanner from "../modules/TopBanner";
 import TopBannerImage from "../../img/topbanner/mcr_room.jpg";
 import ContentBlock from "../modules/ContentBlock";
+import ButtonFlex from "../modules/ButtonFlex";
 
 const About = () => {
   return (
@@ -29,6 +30,13 @@ const About = () => {
           receptions, art socials, discussion groups and our graduate bops. The building is John Fryman of the Architects Design 
           Partnership, and is named after Sir Harold Mitchell, an Old Member of the College, who paid for its construction.
         </p>
+      </ContentBlock>
+      <ContentBlock>
+        <ButtonFlex display={[
+          {key: 1, isLocal: false, des: "Click here to learn more about the history of WCR building!", link: "https://www.univ.ox.ac.uk/news/a-history-of-the-mitchell-building/"}
+        ]}/>
+      </ContentBlock>
+      <ContentBlock>
         <h2>General Facilities</h2>
         <ul>
           <li>Comfortable lounge with plenty of seatings.</li>

@@ -1,43 +1,91 @@
-.Triplet-container {
+.ButtonFlex-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    max-width: 720px;
-    margin-inline: auto;
 }
 
-.Triplet-container > * {
-    width: 100%;
+.ButtonFlex-container-2, .ButtonFlex-container-3 {
+    flex-direction: column;
+    margin-inline: 0;
+}
+
+.ButtonFlex-container > * {
     text-align: center;
-    padding: 1em;
-    margin-inline: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-inline: 2em;
 }
 
-.Triplet-container > * + * {
+.ButtonFlex-container > * + * {
     margin-top: 1em;
 }
 
-.Triplet-link-white > a {
+/* individual button styling */
+
+.ButtonFlex-primary {
+    background-color: var(--primary)
+}
+
+.ButtonFlex-primary > a {
     color: white;
     text-decoration: none;
 }
 
-.Triplet-link-black > a {
+.ButtonFlex-secondary {
+    background-color: var(--secondary)
+}
+
+.ButtonFlex-secondary > a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.ButtonFlex-darkgrey {
+    background-color: var(--darkgrey);
+}
+
+.ButtonFlex-darkgrey > a {
     color: black;
     text-decoration: none;
 }
 
-@media (min-width: 640px) {
-    .Triplet-container {
+/* mobile version: depends on length of item list */
+
+.ButtonFlex-container-1 > * {
+    width: 100%;
+    max-width: 48ch;
+    margin-inline: auto;
+}
+
+@media (min-width: 800px) {
+    .ButtonFlex-container-2 {
         flex-direction: row;
+        margin-inline: auto;
+        max-width: 720px;
     }
 
-    .Triplet-container > * {
+    .ButtonFlex-container-2 > * {
         width: 20ch;
+        margin-inline: 2ch;
     }
 
-    .Triplet-container > * + * {
+    .ButtonFlex-container-2 > * + * {
         margin-top: 0;
-        /* margin-left: 2ch; */
+    }
+}
+
+@media (min-width: 1080px) {
+    .ButtonFlex-container-3 {
+        flex-direction: row;
+        margin-inline: auto;
+        max-width: 960px;
+    }
+
+    .ButtonFlex-container-3 > * {
+        width: 20ch;
+        margin-inline: 2ch;
+    }
+
+    .ButtonFlex-container-3 > * + * {
+        margin-top: 0;
     }
 }

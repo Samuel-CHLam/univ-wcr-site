@@ -25,9 +25,10 @@ const Home = () => {
           Whether you are here for a one/two-year Masters programme or a DPhil programme we do hope you choose to get 
           involved with college life!
         </p>
-        <div className="u-block u-block--narrow">
-          <ButtonFlex />
-        </div>
+      </ContentBlock>
+
+      <ContentBlock>
+        <ButtonFlex />
       </ContentBlock>
     </>
   );

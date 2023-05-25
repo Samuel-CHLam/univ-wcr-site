@@ -11,16 +11,16 @@ display: inline-block;
 }
   
 .contentblock-title:before {
-content: "";
-display: block;
-height: 0.25rem;
-width: 100%;
-margin-bottom: 0.25rem;
-opacity: 1;
-background-color: currentColor;
--ms-transform-origin: left center;
-transform-origin: left center;
-animation: 1.5s cubic-bezier(0,0,0,1) 0s 1 section-title-line
+    content: "";
+    display: block;
+    height: 0.25rem;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    opacity: 1;
+    background-color: currentColor;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+    animation: 1.5s cubic-bezier(0,0,0,1) 0s 1 section-title-line
 }
   
 @keyframes section-title-line {

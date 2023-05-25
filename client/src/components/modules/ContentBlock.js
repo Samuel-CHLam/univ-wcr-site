@@ -37,7 +37,7 @@ const ContentBlock = ( {title, children} ) => {
 
   return (
       <div className="contentblock" ref={ref}>
-        <h1>{title}</h1>
+        {title ? (<h1>{title}</h1>) : (<></>)}
         {children}
       </div>
     );
