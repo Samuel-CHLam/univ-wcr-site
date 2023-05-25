@@ -6,7 +6,7 @@
     margin-bottom: 2rem;
   }
   
-.contentblock-title {
+.contentblock > h1 {
 display: inline-block;
 }
   
