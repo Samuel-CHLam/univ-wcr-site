@@ -5,6 +5,7 @@ import "../../utilities.css"
 import "./About.css";
 
 import TopBanner from "../modules/TopBanner";
+import ContentBlock from "../modules/ContentBlock";
 
 // import TopBanner from "../modules/TopBanner";
 // import TopBannerImage from "../../img/topbanner/crossrail.jpg";
@@ -37,13 +38,12 @@ const Profile = ({userId}) => {
           content={`Welcome ${currentUser.name}`} />
 
       {/* <Fade cascade={true} direction="up" triggerOnce> */}
-      <div className="u-block">
-        <h1>Welcome! Here is your profile!</h1>
+      <ContentBlock title="Welcome! Here is your profile!">
         <p>Name: {currentUser.name} </p>
         <p>WCR Role: {currentUser.wcrRole}</p>
         <p>Subject: {currentUser.subject} </p>
         <p>Joined Univ since: {currentUser.joinedUnivSince}</p>
-      </div>
+      </ContentBlock>
       {/* </Fade> */}
     </>
   );
