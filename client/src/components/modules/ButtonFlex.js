@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../../utilities.css"
-import "./Triplet.css";
+import "./ButtonFlex.css";
 
-const Triplet = () => {
+const ButtonFlex = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -20,5 +20,5 @@ const Triplet = () => {
   );
 }
   
-export default Triplet;
+export default ButtonFlex;
   

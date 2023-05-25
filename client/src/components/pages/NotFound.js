@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 import "../../utilities.css"
 import "./NotFound.css";
-import Triplet from "../modules/Triplet";
+import ButtonFlex from "../modules/ButtonFlex";
 
 class NotFound extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class NotFound extends Component {
             </div>
             <div className="u-block">
             <h1 className="u-section-title">Or you want to hear about us more...</h1>
-                <Triplet />
+                <ButtonFlex />
             </div>
             {/* </Fade> */}
         </>

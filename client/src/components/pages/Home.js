@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 import "../../utilities.css"
 import "./Home.css";
-import Triplet from "../modules/Triplet.js";
+import ButtonFlex from "../modules/ButtonFlex.js";
 import TopBanner from "../modules/TopBanner";
 import ContentBlock from "../modules/ContentBlock";
 import TopBannerImage from "../../img/topbanner/eurovision.png";
@@ -26,7 +26,7 @@ const Home = () => {
           involved with college life!
         </p>
         <div className="u-block u-block--narrow">
-          <Triplet />
+          <ButtonFlex />
         </div>
       </ContentBlock>
     </>
