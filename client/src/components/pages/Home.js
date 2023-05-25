@@ -30,7 +30,7 @@ class Home extends Component {
         {/* Intro */}
         
         <div className="u-block">
-          <h1> We are a vibrant and diverse community of graduate students at the University College, Oxford.</h1>
+          <h1> Who are we? </h1>
           <p>
           The WCR has a double meaning: it refers to the graduate body of students at University College and also 
           to the physical space in the College where graduate students can relax and socialise. It is an engaging 
