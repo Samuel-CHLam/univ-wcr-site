@@ -5,7 +5,7 @@ import "../../utilities.css"
 import "./Home.css";
 import Triplet from "../modules/Triplet.js";
 import TopBanner from "../modules/TopBanner";
-import TopBannerImage from "../../img/topbanner/crossrail.jpg";
+import TopBannerImage from "../../img/topbanner/eurovision.png";
 
 class Home extends Component {
   constructor(props) {

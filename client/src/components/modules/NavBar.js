@@ -73,7 +73,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
             </li>
 
             <li className="navbar-item"> 
-              <Link to="/governance" className="navbar-links" onClick={collapseAfterClick}>Governance</Link></li>
+              <Link to="/committee" className="navbar-links" onClick={collapseAfterClick}>Committee</Link></li>
 
             {/* <li className="navbar-item" onMouseEnter={onMouseEnterCV} onMouseLeave={onMouseLeaveCV}> 
               <Link to="/cv" className="navbar-links">

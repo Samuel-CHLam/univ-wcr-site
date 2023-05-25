@@ -26,7 +26,7 @@ const colorArray = [
 ]
 
 const TopBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight, textColor, title, content} ) => {
-  const finalColorKey = bgColorKey || "black";
+  const finalColorKey = bgColorKey || "secondary";
   const backgroundRgb = colorArray.find(element => element.key == finalColorKey).bgColor;
   const finalTextColor = textColor || colorArray.find(element => element.key == finalColorKey).textColor;
   let bgStyle = {backgroundColor: `rgb(${backgroundRgb[0]}, ${backgroundRgb[1]}, ${backgroundRgb[2]})`};

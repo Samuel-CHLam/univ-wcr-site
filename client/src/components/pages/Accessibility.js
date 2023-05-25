@@ -2,7 +2,6 @@ import React from "react";
 // import { Fade } from "react-awesome-reveal";
 
 import TopBanner from "../modules/TopBanner";
-import TopBannerImage from "../../img/topbanner/crossrail.jpg";
 
 import "../../utilities.css"
 import "./Accessibility.css";
@@ -10,7 +9,7 @@ import "./Accessibility.css";
 const Accessibility = () => {
   return (
     <>
-      <TopBanner background={TopBannerImage} title="Privacy and Accessibility" content="Privacy and Accessibility Statements" />
+      <TopBanner title="Privacy and Accessibility" content="Privacy and Accessibility Statements" />
       {/* <Fade direction="up" triggerOnce> */}
         <div className="u-block">
           <h1>Privacy</h1>
@@ -39,7 +38,7 @@ const Accessibility = () => {
             <p>
               The website aims to comply with the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>. Since the website is under 
               development, there may be content which are not accessible. If you need information on this website in a different format like accessible PDF, large print, 
-              easy read, audio recording or braille or if you find any accessibility issues, then please contact us at <a href="mailto:icrs@imperial.ac.uk"> icrs@imperial.ac.uk</a>. 
+              easy read, audio recording or braille or if you find any accessibility issues, then please contact us at <a href="mailto:wcr-externalaffairs@univ.ox.ac.uk">wcr-externalaffairs@univ.ox.ac.uk</a>. 
               We will consider your request and get back to you within seven days.
             </p>
             <p>

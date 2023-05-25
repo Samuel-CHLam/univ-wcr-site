@@ -90,6 +90,10 @@ b {
   margin-bottom: 2rem;
 }
 
+.u-block > h1 {
+  display: inline-block;
+}
+
 .u-block > h1:before {
   content: "";
   display: block;

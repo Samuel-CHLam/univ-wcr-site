@@ -4,12 +4,12 @@ import "../../utilities.css"
 import "./About.css";
 
 import TopBanner from "../modules/TopBanner";
-import TopBannerImage from "../../img/topbanner/crossrail.jpg";
+import TopBannerImage from "../../img/topbanner/mcr_room.jpg";
 
 const About = () => {
   return (
     <>
-      <TopBanner background={TopBannerImage} title="About" content="About" />
+      <TopBanner backgroundImage={TopBannerImage} title="About" content="About" />
       {/* <Fade cascade={true} direction="up" triggerOnce> */}
         <div className="u-block">
           <h1>The graduate community of University College, Oxford.</h1>
