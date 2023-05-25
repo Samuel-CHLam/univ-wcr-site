@@ -40,7 +40,6 @@ router.get("/user", (req, res) => {
   // console.log(`Succesfully received id: ${req.query.userId}, now find information.`)
   User.findById(req.query.userId).then((user) => {
     res.send(user)
-    console.log(`user information sent!`)
   });
 });
 
