@@ -9,7 +9,7 @@ import "./Accessibility.css";
 const Accessibility = () => {
   return (
     <>
-      <TopBanner title="Privacy and Accessibility" content="Privacy and Accessibility Statements" />
+      <TopBanner bgColorKey="secondary" title="Privacy and Accessibility" content="Privacy and Accessibility Statements" />
       {/* <Fade direction="up" triggerOnce> */}
         <div className="u-block">
           <h1>Privacy</h1>
