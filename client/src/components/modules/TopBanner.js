@@ -40,7 +40,7 @@ const TopBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight, tex
   }
   
   return (
-      <div className="topbanner topbanner--standard" style={bgStyle}>
+      <div className="topbanner" style={bgStyle}>
           <div className="topbanner-bodycontainer">
               <h3 className="topbanner-title" style={{color: `var(--${finalTextColor})`}}> {title} </h3>
               <h1 className="topbanner-content" style={{color: `var(--${finalTextColor})`}}> 

@@ -4,12 +4,9 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    padding-top: 37vh;
     display: flex;
-}
-
-.topbanner--standard {
-    height: 55vh;
+    padding-top: 15vh;
+    height: 25vh;
 }
 
 .topbanner-bodycontainer {
@@ -46,6 +43,7 @@
 }
 
 @media (min-width: 752px) {
+
     .topbanner-title {
         font-size: 1.5em;
     }
@@ -54,4 +52,11 @@
       font-size: 2.5em;
     }
 
+}
+
+@media (min-width: 1600px) {
+    .topbanner {
+        height: 55vh;
+        padding-top: 37vh;
+    }
 }
