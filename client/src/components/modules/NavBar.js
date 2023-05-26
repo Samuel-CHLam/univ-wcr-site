@@ -61,8 +61,6 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
           </div>
 
           <ul className={click ? "navbar-menu active" : "navbar-menu"}>
-            <li className="navbar-item"> 
-              <Link to="/about" className="navbar-links" onClick={collapseAfterClick}>About</Link></li>
 
             <li className="navbar-item" onClick={collapseAfterClick}> 
               <Link to="/news" className="navbar-links">News</Link>
@@ -71,6 +69,9 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
             <li className="navbar-item" onClick={collapseAfterClick}> 
               <Link to="/whatson" className="navbar-links">What's on</Link>
             </li>
+
+            <li className="navbar-item"> 
+              <Link to="/about" className="navbar-links" onClick={collapseAfterClick}>About</Link></li>
 
             <li className="navbar-item"> 
               <Link to="/committee" className="navbar-links" onClick={collapseAfterClick}>Committee</Link></li>
