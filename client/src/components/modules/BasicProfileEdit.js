@@ -54,6 +54,24 @@ const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
             </>) : null}
         </div>
       </div>
+      <div className="basicprofileedit-item">
+        <div className="basicprofileedit-item-left">Facebook:</div>
+        <div className="basicprofileedit-item-right">
+            <input {...register("facebookLink")} placeholder="Facebook link" defaultValue={currentBasicProfile.facebookLink}/>
+        </div>
+      </div>
+      <div className="basicprofileedit-item">
+        <div className="basicprofileedit-item-left">Twitter:</div>
+        <div className="basicprofileedit-item-right">
+            <input {...register("twitterLink")} placeholder="Twitter link" defaultValue={currentBasicProfile.twitterLink}/>
+        </div>
+      </div>
+      <div className="basicprofileedit-item">
+        <div className="basicprofileedit-item-left">LinkedIn:</div>
+        <div className="basicprofileedit-item-right">
+            <input {...register("linkedInLink")} placeholder="LinkedIn link" defaultValue={currentBasicProfile.linkedInLink}/>
+        </div>
+      </div>
       <ButtonFlex display={[{key: 1, isSubmit: true}, {key: 2, des: "Return to profile", onClick: afterSubmit}]}/>
     </form>
   );

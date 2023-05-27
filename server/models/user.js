@@ -16,7 +16,10 @@ const userSchema = new mongoose.Schema({
   personalIntro: String,
   researchInterest: String,
   joinedUnivSince: Number,
-  contact: [{media: String, link: String}]
+  facebookLink: String,
+  twitterLink: String,
+  linkedInLink: String,
+  otherContact: [{media: String, link: String}]
 });
 
 // compile model from schema

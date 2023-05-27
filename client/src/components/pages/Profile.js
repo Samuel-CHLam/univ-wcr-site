@@ -42,7 +42,10 @@ const Profile = ({userId}) => {
     name: currentUser.name,
     wcrRole: currentUser.wcrRole,
     subject: currentUser.subject,
-    joinedUnivSince: currentUser.joinedUnivSince
+    joinedUnivSince: currentUser.joinedUnivSince,
+    facebookLink: currentUser.facebookLink,
+    twitterLink: currentUser.twitterLink,
+    linkedInLink: currentUser.linkedInLink
   }
   
   if (!currentUser) {
@@ -56,6 +59,9 @@ const Profile = ({userId}) => {
           <p>WCR Role: {currentUser.wcrRole}</p>
           <p>Subject: {currentUser.subject} </p>
           <p>Joined Univ since: {currentUser.joinedUnivSince}</p>
+          <p>Facebook: { currentUser.facebookLink ? (<a href={currentUser.facebookLink}>{currentUser.facebookLink}</a>) : (<>not provided</>)}</p>
+          <p>Twitter: { currentUser.twitterLink ? (<a href={currentUser.twitterLink}>{currentUser.twitterLink}</a>) : (<>not provided</>)}</p>
+          <p>LinkedIn: { currentUser.linkedInLink ? (<a href={currentUser.linkedInLink}>{currentUser.linkedInLink}</a>) : (<>not provided</>)}</p>
           <ButtonFlex display={[{key: 1, onClick: onEditBasicProfile, des:"Click to edit your basic profile", color: "primary"}]}/>
           {/* <button className="u-b-primary" onClick={onEditBasicProfile}>Click to edit your basic profile</button> */}
         </ContentBlock>
