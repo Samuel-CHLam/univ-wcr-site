@@ -70,6 +70,17 @@ b {
   letter-spacing: -.025em;
 }
 
+button {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-inline: 2em;
+  border: none;
+  margin-inline: auto;
+}
+
 .App-container {
   margin: 0 0 40px 0;
 }
@@ -171,43 +182,40 @@ b {
   color: var(--primary--dim);
 }
 
-.u-ordinarybutton {
-  font-size: 100%;
-  font-family: inherit;
-  margin: 0;
-  padding: 0px 4px;
-  border: none;
-  background: none;
-}
-
 .u-margin-top {
   margin-top: 12px;
 }
 
 .u-b-primary {
-  background-color: var(--primary)
+  background-color: var(--primary);
+  color: white
 }
 
 .u-b-secondary {
-  background-color: var(--secondary)
+  background-color: var(--secondary);
+  color: var(--primary)
 }
 
 .u-b-blue {
-  background-color: var(--blue)
+  background-color: var(--blue);
+  color: var(--primary)
 }
 
 .u-b-red {
-  background-color: var(--red)
+  background-color: var(--red);
+  color: white
 }
 
 .u-b-violet {
-  background-color: var(--violet)
+  background-color: var(--violet);
+  color: white;
 }
 
 .u-b-white {
   background-color: white
 }
 
-.u-b-grey {
-  background-color: var(--grey)
+.u-b-darkgrey {
+  background-color: var(--darkgrey);
+  color: black
 }

@@ -52,7 +52,7 @@ const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
             </>) : null}
         </div>
       </div>
-      <input className="basicprofileedit-submit" type="submit" />
+      <input className="basicprofileedit-submit u-b-secondary" type="submit" />
     </form>
   );
 }

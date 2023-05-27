@@ -38,6 +38,18 @@
     width: 100%;
 }
 
+.basicprofileedit-submit {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-inline: 2em;
+  border: none;
+  margin-inline: auto;
+}
+
 @media (min-width: 640px) {
     .basicprofileedit-item {
         flex-direction: row;
