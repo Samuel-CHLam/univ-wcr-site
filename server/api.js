@@ -43,6 +43,18 @@ router.get("/user", (req, res) => {
   });
 });
 
+router.post("/basicuserupdate", (req,res) => {
+  console.log("Updating basic details of user");
+  console.log(req.body);
+  User.updateOne({_id: req.user}, {$set : 
+    {"name": req.body.name,
+    "wcrRole": req.body.wcrRole,
+    "subject": req.body.subject,
+    "joinedUnivSince": req.body.joinedUnivSince,
+    } 
+  }).then((page) => {res.send(page)});
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

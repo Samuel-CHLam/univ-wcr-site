@@ -4,7 +4,7 @@ import { get } from "../../utilities";
 import "../../utilities.css"
 import "./About.css";
 
-import TopBanner from "../modules/TopBanner";
+// import TopBanner from "../modules/TopBanner";
 import ContentBlock from "../modules/ContentBlock";
 import BasicProfileEdit from "../modules/BasicProfileEdit";
 
@@ -15,17 +15,17 @@ const Profile = ({userId}) => {
   const [currentUser, setCurrentUser] = useState({});
   const [editBasicProfile, setEditBasicProfile] = useState(false);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      if (userId) {
-          const anotherUser = await get("/api/user", {userId: userId});
-          setCurrentUser(anotherUser);
-          }
-          else {
-              console.log("you need to login!")
-          };
+  const fetchUser = async () => {
+    if (userId) {
+        const anotherUser = await get("/api/user", {userId: userId});
+        setCurrentUser(anotherUser);
         }
+        else {
+            console.log("you need to login!")
+        };
+      }
 
+  useEffect(() => {
     fetchUser();
     }, [userId]); // make sure to call the useEffect once again when the userId input changes.
 
@@ -34,7 +34,7 @@ const Profile = ({userId}) => {
   }
 
   const afterEditBasicProfile = () => {
-    setEditBasicProfile(!editBasicProfile)
+    fetchUser().then(setEditBasicProfile(!editBasicProfile))
   }
 
   const currentBasicProfile = {
@@ -60,7 +60,7 @@ const Profile = ({userId}) => {
       ) : (
         <ContentBlock title="You are now editing your profile" >
           <p>You are now editing your profile.</p>
-          <BasicProfileEdit currentBasicProfile={currentBasicProfile} afterSubmit={afterEditBasicProfile}/>
+          <BasicProfileEdit userId={userId} currentBasicProfile={currentBasicProfile} afterSubmit={afterEditBasicProfile}/>
         </ContentBlock>
       )}
     </>

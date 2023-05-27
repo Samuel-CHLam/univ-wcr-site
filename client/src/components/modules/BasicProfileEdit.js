@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { post } from "../../utilities";
 
 import "../../utilities.css";
 import "./BasicProfileEdit.css";
 
-const BasicProfileEdit = ({currentBasicProfile, afterSubmit}) => {
+const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
   const {register, handleSubmit, formState: { errors }} = useForm();
   const [data, setData] = useState(currentBasicProfile);
 
   const onSubmit = (data, e) => {
     setData(JSON.stringify(data));
-    console.log(data);
-    afterSubmit();
+    post("/api/basicuserupdate", {userId: userId, ...data}).then(afterSubmit);
   }
 
   return (
