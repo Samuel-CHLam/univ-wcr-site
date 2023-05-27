@@ -18,6 +18,9 @@ const auth = require("./auth");
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
 
+// sanitise html components
+const sanitizeHtml = require('sanitize-html-react')
+
 // login api
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
@@ -54,6 +57,12 @@ router.post("/basicuserupdate", (req,res) => {
     "linkedInLink": req.body.linkedInLink
     } 
   }).then((page) => {res.send(page)});
+});
+
+router.post("/userpersonalintroupdate", (req,res) => {
+  User.updateOne({_id: req.user}, {$set : 
+    {"personalIntro": sanitizeHtml(req.body.personalIntro)} 
+  }).then((page) => {res.send(page)}).catch((err) => console.log(err));
 });
 
 // anything else falls to this "not found" case

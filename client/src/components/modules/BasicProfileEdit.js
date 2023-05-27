@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { post } from "../../utilities";
 
@@ -52,6 +52,12 @@ const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
             {errors.joinedUnivSince ? (<>
                 {errors.joinedUnivSince.type === "required" ? (<span>Your year of joining Univ is required.</span>) : (<span>Invalid input: input should be between 1249 and 9999.</span>)}
             </>) : null}
+        </div>
+      </div>
+      <div className="basicprofileedit-item">
+        <div className="basicprofileedit-item-left">Website:</div>
+        <div className="basicprofileedit-item-right">
+            <input {...register("websiteLink")} placeholder="Website link" defaultValue={currentBasicProfile.websiteLink}/>
         </div>
       </div>
       <div className="basicprofileedit-item">

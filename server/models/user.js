@@ -14,11 +14,11 @@ const userSchema = new mongoose.Schema({
   webRole: { type: String, default: "visitor" },
   subject: String,
   personalIntro: String,
-  researchInterest: String,
   joinedUnivSince: Number,
   facebookLink: String,
   twitterLink: String,
   linkedInLink: String,
+  websiteLink: String,
   otherContact: [{media: String, link: String}]
 });
 

@@ -49,6 +49,7 @@ const ButtonFlex = (
                   <input 
                     className={`u-b-${item.color || defaultColor[idx]}`}
                     type="submit"
+                    onClick={item.onClick}
                     key={item.key} />
                 ) : (
                   <button 
