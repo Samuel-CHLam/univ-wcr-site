@@ -44,13 +44,14 @@ router.get("/user", (req, res) => {
 });
 
 router.post("/basicuserupdate", (req,res) => {
-  console.log("Updating basic details of user");
-  console.log(req.body);
   User.updateOne({_id: req.user}, {$set : 
     {"name": req.body.name,
     "wcrRole": req.body.wcrRole,
     "subject": req.body.subject,
     "joinedUnivSince": req.body.joinedUnivSince,
+    "facebookLink": req.body.facebookLink,
+    "twitterLink": req.body.twitterLink,
+    "linkedInLink": req.body.linkedInLink
     } 
   }).then((page) => {res.send(page)});
 });
