@@ -55,7 +55,7 @@ const Profile = ({userId}) => {
           <p>WCR Role: {currentUser.wcrRole}</p>
           <p>Subject: {currentUser.subject} </p>
           <p>Joined Univ since: {currentUser.joinedUnivSince}</p>
-          <button className="u-b-primary" onClick={onEditBasicProfile}>Click to edit your profile.</button>
+          <button className="u-b-primary" onClick={onEditBasicProfile}>Click to edit your basic profile</button>
         </ContentBlock>
       ) : (
         <ContentBlock title="You are now editing your profile" >
