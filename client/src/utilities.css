@@ -186,36 +186,37 @@ button {
   margin-top: 12px;
 }
 
-.u-b-primary {
+.u-b-primary, .u-b-primary:hover, .u-b-primary:visited {
   background-color: var(--primary);
   color: white
 }
 
-.u-b-secondary {
+.u-b-secondary, .u-b-secondary:hover, .u-b-secondary:visited {
   background-color: var(--secondary);
   color: var(--primary)
 }
 
-.u-b-blue {
+.u-b-blue, .u-b-blue:hover, .u-b-blue:visited {
   background-color: var(--blue);
   color: var(--primary)
 }
 
-.u-b-red {
+.u-b-red, .u-b-red:hover, .u-b-red:visited {
   background-color: var(--red);
   color: white
 }
 
-.u-b-violet {
+.u-b-violet, .u-b-violet:hover, .u-b-violet:visited {
   background-color: var(--violet);
   color: white;
 }
 
-.u-b-white {
-  background-color: white
+.u-b-white, .u-b-white:hover, .u-b-white:visited {
+  background-color: white;
+  color: black;
 }
 
-.u-b-darkgrey {
+.u-b-darkgrey, .u-b-darkgrey:hover, .u-b-darkgrey:visited {
   background-color: var(--darkgrey);
   color: black
 }

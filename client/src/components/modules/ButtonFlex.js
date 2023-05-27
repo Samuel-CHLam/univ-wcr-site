@@ -24,13 +24,43 @@ const ButtonFlex = (
   return (
     <div className={`ButtonFlex-container ButtonFlex-container-${display.length}`}>
       {display.map((item, idx) => {
-        return (<div className={`ButtonFlex-${item.color || defaultColor[idx]}`} key={item.key}>
-          {item.isLocal ? (
-            <Link onClick={() => scrollToTop()} to={item.link}> {item.des} </Link>
-          ) : (
-            <a href={item.link}>{item.des}</a>
-          )}
-        </div>)
+        return (
+          <>
+            { item.link ? (
+              <>
+                { item.isLocal ? (
+                  <Link 
+                    onClick={item.onClick || scrollToTop} 
+                    to={item.link} 
+                    className={`u-b-${item.color || defaultColor[idx]}`} 
+                    key={item.key}> 
+                    {item.des} </Link>
+                ) : (
+                  <a 
+                    href={item.link}
+                    className={`u-b-${item.color || defaultColor[idx]}`}
+                    key={item.key}>
+                      {item.des}</a>
+                )}
+              </>
+            ) : (
+              <>
+                { item.isSubmit ? (
+                  <input 
+                    className={`u-b-${item.color || defaultColor[idx]}`}
+                    type="submit"
+                    key={item.key} />
+                ) : (
+                  <button 
+                    onClick={item.onClick}
+                    className={`u-b-${item.color || defaultColor[idx]}`}
+                    key={item.key}>
+                    {item.des}
+                  </button>
+                )}
+              </>
+            )}
+          </>)
       })}
       {/* <div className="ButtonFlex-secondary"> <Link onClick={() => scrollToTop()} to="/about">Learn More</Link> </div>
       <div className="ButtonFlex-primary"> <a href="https://forms.office.com/r/2vTvALSNBx" className="">Contact us</a> </div> */}

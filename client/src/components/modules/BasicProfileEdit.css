@@ -39,7 +39,6 @@
 }
 
 .basicprofileedit-submit {
-  display: block;
   font-size: 1rem;
   text-align: center;
   margin-top: 1.5rem;
@@ -47,7 +46,6 @@
   padding-bottom: 1em;
   padding-inline: 2em;
   border: none;
-  margin-inline: auto;
 }
 
 @media (min-width: 640px) {

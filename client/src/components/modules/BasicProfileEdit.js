@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { post } from "../../utilities";
 
+import ButtonFlex from "./ButtonFlex";
+
 import "../../utilities.css";
 import "./BasicProfileEdit.css";
 
@@ -52,7 +54,7 @@ const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
             </>) : null}
         </div>
       </div>
-      <input className="basicprofileedit-submit u-b-secondary" type="submit" />
+      <ButtonFlex display={[{key: 1, isSubmit: true}, {key: 2, des: "Return to profile", onClick: afterSubmit}]}/>
     </form>
   );
 }
