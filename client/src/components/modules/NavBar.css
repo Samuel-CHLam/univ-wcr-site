@@ -30,6 +30,14 @@
   color: white;
 }
 
+.navbar-title-full {
+  display: inline;
+}
+
+.navbar-title-short {
+  display: none;
+}
+
 .navbar-logo-container {
   margin-right: 1ch;
   padding-top: .5rem;
@@ -126,5 +134,15 @@
     font-size: 1.8rem;
     cursor: pointer;
     color: white;
+  }
+}
+
+@media (max-width: 432px) {
+  .navbar-title-full {
+    display: none;
+  }
+  
+  .navbar-title-short {
+    display: inline;
   }
 }

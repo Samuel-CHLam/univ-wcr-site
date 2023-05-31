@@ -49,7 +49,6 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
 
   // external affairs pages
 
-
   const onMouseEnterEA = () => {
     if (window.innerwidth < 1240) {setDropdownEA(false)} else {setDropdownEA(true)};
   };
@@ -66,7 +65,8 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
           <div >
             <Link to="/" className="navbar-title u-inlineBlock" onClick={scrollToTop}>
               <div className="navbar-logo-container"> <img src={univLogo} className="navbar-logo" /> </div>
-              <span>University College, Oxford <br/> Weir Common Room</span> 
+              <span className="navbar-title-full">University College, Oxford <br/> Weir Common Room</span> 
+              <span className="navbar-title-short">Univ WCR</span> 
             </Link>
           </div>
 
