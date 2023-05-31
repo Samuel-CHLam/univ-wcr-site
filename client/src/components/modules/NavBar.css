@@ -135,9 +135,15 @@
     cursor: pointer;
     color: white;
   }
+
+  .navbar-item > button {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: inherit;
+  }
 }
 
-@media (max-width: 432px) {
+@media (max-width: 472px) {
   .navbar-title-full {
     display: none;
   }
