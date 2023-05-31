@@ -50,7 +50,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   // external affairs pages
 
   const onMouseEnterEA = () => {
-    if (window.innerwidth < 1240) {setDropdownEA(false)} else {setDropdownEA(true)};
+    if (window.innerwidth < 1200) {setDropdownEA(false)} else {setDropdownEA(true)};
   };
 
   const onMouseLeaveEA = () => {setDropdownEA(false)};
