@@ -68,7 +68,7 @@
 
 .navbar-links {
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   font-size: 0.8rem;
   color: var(--lightgrey);
 }
@@ -82,7 +82,7 @@
   display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .navbar-menu {
     display: flex;
     flex-direction: column;

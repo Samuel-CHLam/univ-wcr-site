@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
-// import {ReactComponent as WhiteLogo} from "../../img/Samuel_Lam_Logo_for_black.svg";
-// import NavBarDropdown from "./NavBarDropdown.js";
+import NavBarDropdown from "./NavBarDropdown.js";
 
 import "../../utilities.css";
 import "./NavBar.css";
@@ -20,7 +19,8 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
 
   // hamburger menu
   const [click, setClick] = useState(false);
-  // const [dropdownCV, setDropdownCV] = useState(false);
+  const [dropdownAbout, setDropdownAbout] = useState(false);
+  const [dropdownEA, setDropdownEA] = useState(false); // for external affairs page
 
   const closeMobileMenu = () => setClick(false);
   const scrollToTop = () => {
@@ -34,17 +34,31 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
     scrollToTop();
   }
 
-  // CV page
-  // const onMouseEnterCV = () => {
-  //   if (window.innerwidth < 1240) {setDropdownCV(false)} else {setDropdownCV(true)};
-  // };
+  // about and governance pages
+  const onMouseEnterAbout = () => {
+    if (window.innerwidth < 1200) {setDropdownAbout(false)} else {setDropdownAbout(true)};
+  };
 
-  // const onMouseLeaveCV = () => {setDropdownCV(false)};
+  const onMouseLeaveAbout = () => {setDropdownAbout(false)};
 
-  // const cvSubpages = [
-  //   {title: "Writings", localpath: true, path: "/publication"},
-  //   {title: "UG Programme", localpath: true, path: ""},
-  // ]
+  const aboutSubpages = [
+    {title: "Governance", localpath: true, path: "/governance"},
+    {title: "Constitution (PDF)", localpath: true, path: ""},
+    {title: "Meeting Records", localpath: true, path: ""},
+  ]
+
+  // external affairs pages
+
+
+  const onMouseEnterEA = () => {
+    if (window.innerwidth < 1240) {setDropdownEA(false)} else {setDropdownEA(true)};
+  };
+
+  const onMouseLeaveEA = () => {setDropdownEA(false)};
+
+  const eaSubpages = [
+    {title: "Policy directory", localpath: true, path: ""},
+  ]
 
   return (
     <>
@@ -62,25 +76,31 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
 
           <ul className={click ? "navbar-menu active" : "navbar-menu"}>
 
+          <li className="navbar-item" onClick={collapseAfterClick}> 
+              <Link to="/events" className="navbar-links">Events</Link>
+            </li>
+
             <li className="navbar-item" onClick={collapseAfterClick}> 
               <Link to="/news" className="navbar-links">News</Link>
             </li>
 
-            <li className="navbar-item" onClick={collapseAfterClick}> 
-              <Link to="/whatson" className="navbar-links">What's on</Link>
+            <li className="navbar-item" onMouseEnter={onMouseEnterAbout} onMouseLeave={onMouseLeaveAbout}> 
+              <Link to="/about" className="navbar-links">
+                About <i className="fas fa-caret-down"/> </Link>
+                {dropdownAbout && <NavBarDropdown menuItems={aboutSubpages} />}
             </li>
 
             <li className="navbar-item"> 
-              <Link to="/about" className="navbar-links" onClick={collapseAfterClick}>About</Link></li>
+              <Link to="/welfare" className="navbar-links" onClick={collapseAfterClick}>Welfare</Link></li>
+
+            <li className="navbar-item" onMouseEnter={onMouseEnterEA} onMouseLeave={onMouseLeaveEA}> 
+              <Link to="/about" className="navbar-links">
+                External Affairs <i className="fas fa-caret-down"/> </Link>
+                {dropdownEA && <NavBarDropdown menuItems={eaSubpages} />}
+            </li>
 
             <li className="navbar-item"> 
-              <Link to="/committee" className="navbar-links" onClick={collapseAfterClick}>Committee</Link></li>
-
-            {/* <li className="navbar-item" onMouseEnter={onMouseEnterCV} onMouseLeave={onMouseLeaveCV}> 
-              <Link to="/cv" className="navbar-links">
-                Curriculum Vitae <i className="fas fa-caret-down"/> </Link>
-                {dropdownCV && <NavBarDropdown menuItems={cvSubpages} />}
-            </li> */}
+              <Link to="/welfare" className="navbar-links" onClick={collapseAfterClick}>Contact Us</Link></li>
 
             {userId ? (
               <li className="navbar-item">
