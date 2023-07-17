@@ -13,8 +13,11 @@ const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
 
   const onSubmit = (data, e) => {
     setData(JSON.stringify(data));
-    post("/api/basicuserupdate", {userId: userId, ...data}).then(afterSubmit);
+    console.log(data);
+    post("/api/basicuserupdate", {googleid: userId, ...data}).then(afterSubmit);
   }
+
+  console.log(userId);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

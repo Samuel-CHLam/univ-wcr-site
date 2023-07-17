@@ -1,0 +1,14 @@
+.profile-flex {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.profile-img { 
+    width: auto;
+}
+/* 
+@media (min-width: 752px) {
+    .profile-flex {
+        flex-direction: row;
+    }
+} */

@@ -27,8 +27,8 @@ const App = () => {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registerd in the database, and currently logged in.
-        setUserId(user._id)
-        setCurrentUser(user)
+        setUserId(user.googleid)
+        // setCurrentUser(user)
         console.log(`You are currently logged in as ${user.name}`)
       }
     });
@@ -39,8 +39,8 @@ const App = () => {
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
     post("/api/login", { token: userToken }).then((user) => {
-      setUserId(user._id);
-      setCurrentUser(user)
+      setUserId(user.googleid);
+      // setCurrentUser(user)
     });
   };
 

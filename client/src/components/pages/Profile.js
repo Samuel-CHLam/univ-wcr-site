@@ -4,7 +4,7 @@ import { get } from "../../utilities";
 import "../../utilities.css"
 import "./About.css";
 
-// import TopBanner from "../modules/TopBanner";
+import ProfileBanner from "../modules/ProfileBanner";
 import ContentBlock from "../modules/ContentBlock";
 import BasicProfileEdit from "../modules/BasicProfileEdit";
 import ButtonFlex from "../modules/ButtonFlex";
@@ -17,7 +17,7 @@ const Profile = ({userId}) => {
 
   const fetchUser = async () => {
     if (userId) {
-        const anotherUser = await get("/api/user", {userId: userId});
+        const anotherUser = await get("/api/user", {googleid: userId});
         setCurrentUser(anotherUser);
         }
         else {
@@ -52,15 +52,20 @@ const Profile = ({userId}) => {
   return (
     <>
       { !editBasicProfile ? (
-        <ContentBlock title={`Welcome ${currentUser.name}! Here is your profile!`} >
-          <p>Name: {currentUser.name} </p>
-          <p>WCR Role: {currentUser.wcrRole}</p>
-          <p>Subject: {currentUser.subject} </p>
-          <p>Joined Univ since: {currentUser.joinedUnivSince}</p>
-          <p>Website: { currentUser.websiteLink ? (<a href={currentUser.websiteLink}>{currentUser.websiteLink}</a>) : (<>not provided</>)}</p>
-          <p>Facebook: { currentUser.facebookLink ? (<a href={currentUser.facebookLink}>{currentUser.facebookLink}</a>) : (<>not provided</>)}</p>
-          <p>Twitter: { currentUser.twitterLink ? (<a href={currentUser.twitterLink}>{currentUser.twitterLink}</a>) : (<>not provided</>)}</p>
-          <p>LinkedIn: { currentUser.linkedInLink ? (<a href={currentUser.linkedInLink}>{currentUser.linkedInLink}</a>) : (<>not provided</>)}</p>
+        <ContentBlock title={`Welcome ${currentUser.name}! Here is your profile!`}>
+          <div className="profile-flex">
+            <div>
+              <p>Name: {currentUser.name} </p>
+              <p>WCR Role: {currentUser.wcrRole}</p>
+              <p>Subject: {currentUser.subject} </p>
+              <p>Joined Univ since: {currentUser.joinedUnivSince}</p>
+              <p>Website: { currentUser.websiteLink ? (<a href={currentUser.websiteLink}>{currentUser.websiteLink}</a>) : (<>not provided</>)}</p>
+              <p>Facebook: { currentUser.facebookLink ? (<a href={currentUser.facebookLink}>{currentUser.facebookLink}</a>) : (<>not provided</>)}</p>
+              <p>Twitter: { currentUser.twitterLink ? (<a href={currentUser.twitterLink}>{currentUser.twitterLink}</a>) : (<>not provided</>)}</p>
+              <p>LinkedIn: { currentUser.linkedInLink ? (<a href={currentUser.linkedInLink}>{currentUser.linkedInLink}</a>) : (<>not provided</>)}</p>
+            </div>
+            {/* <img className="profile-img" src={ currentUser.profile_pic_link } /> */}
+          </div>
           <ButtonFlex display={[{key: 1, onClick: onEditBasicProfile, des:"Click to edit your basic profile", color: "primary"}]}/>
         </ContentBlock>
       ) : (

@@ -23,7 +23,7 @@ const PersonalIntroEdit = ({ userId, currentPersonalIntro, afterSubmit}) => {
   };
 
   const onSubmit = (entry, e) => {
-    post("/api/userpersonalintroupdate", {userId: userId, ...entry}).then(afterSubmit);
+    post("/api/userpersonalintroupdate", {googleid: userId, ...entry}).then(afterSubmit);
   }
 
   const personalIntroContent = watch("personalIntro");

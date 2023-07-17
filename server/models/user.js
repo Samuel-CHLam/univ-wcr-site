@@ -11,7 +11,6 @@ const userSchema = new mongoose.Schema({
     endYear: Number,
   }],
   wcrRole: String, // name of wcr role, alumni
-  webRole: { type: String, default: "visitor" },
   subject: String,
   personalIntro: String,
   joinedUnivSince: Number,
