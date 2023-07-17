@@ -22,7 +22,7 @@
   --secondary: rgb(251,189,26);
   --red: rgb(229,52,44);
   --blue: rgb(122,178,221);
-  --grey: rgb(196,197,198);
+  --grey: rgb(225, 225, 225);
   --violet: rgb(148,18,118);
   --extradarkgrey: rgb(69,69,69);
   --darkgrey: rgb(170,170,170);
@@ -186,6 +186,26 @@ button {
 .u-margin-top {
   margin-top: 12px;
 }
+
+.u-image {
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.u-aspect-169 {
+  aspect-ratio: 16/9;
+}
+
+.u-aspect-43 {
+  aspect-ratio: 4/3;
+}
+
+.u-aspect-square {
+  aspect-ratio: 1/1;
+}
+
 
 .u-b-primary, .u-b-primary:hover, .u-b-primary:visited {
   background-color: var(--primary);

@@ -4,6 +4,7 @@ import { get } from "../../utilities";
 import "../../utilities.css"
 import "./About.css";
 
+import TopBanner from "../modules/TopBanner";
 import ProfileBanner from "../modules/ProfileBanner";
 import ContentBlock from "../modules/ContentBlock";
 import BasicProfileEdit from "../modules/BasicProfileEdit";
@@ -46,19 +47,21 @@ const Profile = ({userId}) => {
   const currentPersonalIntro = currentUser.personalIntro;
 
   
-  if (!currentUser) {
-    return <div className="u-block"> You do not have the permission to look at this page. </div>
+  if (!currentUser.name) {
+    return (
+      <>
+        <TopBanner title="" content="You do not have permission to visit this page" />
+        <div className="u-block">Please contact us for further assistance.</div>
+      </>
+    )
   }
   return (
     <>
+      <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
       { !editBasicProfile ? (
         <ContentBlock title={`Welcome ${currentUser.name}! Here is your profile!`}>
           <div className="profile-flex">
             <div>
-              <p>Name: {currentUser.name} </p>
-              <p>WCR Role: {currentUser.wcrRole}</p>
-              <p>Subject: {currentUser.subject} </p>
-              <p>Joined Univ since: {currentUser.joinedUnivSince}</p>
               <p>Website: { currentUser.websiteLink ? (<a href={currentUser.websiteLink}>{currentUser.websiteLink}</a>) : (<>not provided</>)}</p>
               <p>Facebook: { currentUser.facebookLink ? (<a href={currentUser.facebookLink}>{currentUser.facebookLink}</a>) : (<>not provided</>)}</p>
               <p>Twitter: { currentUser.twitterLink ? (<a href={currentUser.twitterLink}>{currentUser.twitterLink}</a>) : (<>not provided</>)}</p>
@@ -75,7 +78,7 @@ const Profile = ({userId}) => {
         </ContentBlock>
       )}
       
-      <ContentBlock title="Your personal introduction">
+      <ContentBlock title="Personal introduction">
         { !editPersonalIntro ? (
           <>
             <div dangerouslySetInnerHTML={{ __html: currentUser.personalIntro}} />

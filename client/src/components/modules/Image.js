@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../../index.css"
+import "../../utilities.css"
 import "./Image.css";
 
 /**
@@ -9,26 +9,16 @@ import "./Image.css";
  * Prototype
  * @param {string} src as source of picture
  * @param {string} des as description of picture
+ * @param {Boolean} show_des as showing description
  */
 
-class Image extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-    }
-  
-    componentDidMount() {
-      // remember -- api calls go here!
-    }
-  
-    render() {
-      return (
-        <div>
-            <div style={{backgroundImage: `url(${this.props.src})`}} className="image"> </div>
-            <p className="u-nomargin u-margin-top"> &#9654; {this.props.des} </p>
-        </div>
-      );
-    }
-  }
+const Image = ({src,des,show_des}) => {(
+    <div>
+      <div style={{backgroundColor: "violet"}} className="image"> </div>
+      {/* <div style={{backgroundImage: `url(${src})`}} className="image"> </div> */}
+      {/* {(des & show_des) && (<p className="u-nomargin u-margin-top"> &#9654; {des} </p>)} */}
+    </div>
+  );
+};
   
   export default Image;

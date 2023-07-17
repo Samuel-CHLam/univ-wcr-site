@@ -1,31 +1,35 @@
-.topbanner {
-    top: 81px;
+.profilebanner {
     margin: 0;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    display: flex;
-    padding-top: 15vh;
-    height: 25vh;
+    overflow: visible;
+    height: 40vh;
 }
 
-.topbanner-bodycontainer {
-    position: relative;
+.profilebanner-bodycontainer {
     width: 80%;
     margin-inline: auto;
     margin-bottom: 5vh;
+    padding-top: 20vh;
     color: white;
-    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.topbanner-title {
+.profilebanner-left {
+    width: 100%;
+}
+
+.profilebanner-title {
     margin: 0px;
     color: #FFFFFF;
     font-size: 1.25em;
     font-weight: 600;
 }
 
-.topbanner-line {
+.profilebanner-line {
     display: block;
     width: 100%;
     height: .08em;
@@ -34,7 +38,7 @@
     transform-origin: top left;
   }
 
-.topbanner-content {
+.profilebanner-content {
     position: relative;
     top: 10px;
     font-size: 2em;
@@ -42,26 +46,63 @@
     font-weight: 300;
 }
 
-@media (min-width: 752px) {
+.profilebanner-right {
+    width: 100%;
+}
 
-    .topbanner {
-        height: 35vh;
-        padding-top: 40vh;
+.profilebanner-shift {
+    position: relative;
+    top: 5vh;
+    color: black;
+    background-color: var(--grey);
+}
+
+.profilebanner-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.profilebanner-basic {
+    padding: 5%;
+}
+
+@media (min-width: 1020px) {
+
+    .profilebanner {
+        height: 75vh;
     }
 
-    .topbanner-title {
+    .profilebanner-bodycontainer {
+        padding-top: 50vh;
+    }
+
+    .profilebanner-bodycontainer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .profilebanner-title {
         font-size: 1.5em;
     }
 
-    .topbanner-content {
+    .profilebanner-content {
       font-size: 2.5em;
     }
 
-}
-
-@media (min-width: 1600px) {
-    .topbanner {
-        height: 45vh;
-        padding-top: 40vh;
+    .profilebanner-right {
+        width: 56ch;
+        margin-left: 3rem;
     }
+    
+    .profilebanner-shift {
+        position: relative;
+        top: -37.25vh;
+        color: black;
+        background-color: var(--grey);
+    }
+
+    .profilebanner-basic {
+        padding: 3ch;
+    }
+
 }

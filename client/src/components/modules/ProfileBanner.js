@@ -1,5 +1,7 @@
 import React from "react";
 
+import Image from "./Image.js";
+
 import "../../utilities.css";
 import "./ProfileBanner.css";
 
@@ -12,10 +14,11 @@ import "./ProfileBanner.css";
  * @param bgColorKey // primary, secondary, 
  * @param opacityLeft
  * @param opacityRight
- * @param title
  * @param content
  * @param des // describing the background image
  */
+
+import default_img_src from "../../img/logo/univ_192x192.png";
 
 const colorArray = [
   { key: "primary", bgColor: [0,59,121], textColor: "secondary", defaultOpacity: 0.85},
@@ -25,7 +28,7 @@ const colorArray = [
   { key: "black", bgColor: [0,0,0], textColor: "white", defaultOpacity: 0.7}
 ]
 
-const ProfileBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight, textColor, title, content} ) => {
+const ProfileBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight, textColor, userObj} ) => {
   const finalColorKey = bgColorKey || "black";
   const backgroundRgb = colorArray.find(element => element.key == finalColorKey).bgColor;
   const finalTextColor = textColor || colorArray.find(element => element.key == finalColorKey).textColor;
@@ -40,14 +43,26 @@ const ProfileBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight,
   }
   
   return (
-      <div className="topbanner" style={bgStyle}>
-          <div className="topbanner-bodycontainer">
-              <h3 className="topbanner-title" style={{color: `var(--${finalTextColor})`}}> {title} </h3>
-              <h1 className="topbanner-content" style={{color: `var(--${finalTextColor})`}}> 
-                <span className="topbanner-line"style={{color: `var(--${finalTextColor})`}}></span>
-                {content} 
-              </h1>
+      <div className="profilebanner" style={bgStyle}>
+        <div className="profilebanner-bodycontainer">
+          <div className="profilebanner-left">
+            <h3 className="profilebanner-title" style={{color: `var(--${finalTextColor})`}}>Profile</h3>
+            <h1 className="profilebanner-content" style={{color: `var(--${finalTextColor})`}}> 
+              <span className="profilebanner-line"style={{color: `var(--${finalTextColor})`}}></span>
+              {userObj.name} 
+            </h1>
           </div>
+          <div className="profilebanner-right">
+            <div className="profilebanner-shift">
+              <div style={{backgroundImage: `url(${userObj.profile_pic_link})`}} className="u-image u-aspect-43"> </div>
+              <div className="profilebanner-basic">
+                <p>Current Role <br/> <b>{userObj.wcrRole}</b></p>
+                <p>Subject <br/> <b>{userObj.subject}</b></p>
+                <p>Joined Univ Since <br/><b>{userObj.joinedUnivSince}</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
