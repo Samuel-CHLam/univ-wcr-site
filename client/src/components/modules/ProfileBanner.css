@@ -1,21 +1,36 @@
-.profilebanner {
+.profilebanner, .profilebanner-basicinfo {
     margin: 0;
+    width: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     overflow: visible;
-    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    aspect-ratio: 16/9;
+}
+
+.profilebanner {
+    padding-bottom: 2rem;
+}
+
+.profilebanner-basicinfo {
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .profilebanner-bodycontainer {
     width: 80%;
     margin-inline: auto;
-    margin-bottom: 5vh;
-    padding-top: 20vh;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.profilebanner-bodycontainer {
+    color: white;
 }
 
 .profilebanner-left {
@@ -50,35 +65,23 @@
     width: 100%;
 }
 
-.profilebanner-shift {
-    position: relative;
-    top: 5vh;
-    color: black;
-    background-color: var(--grey);
-}
-
 .profilebanner-image {
     max-width: 100%;
     height: auto;
 }
 
-.profilebanner-basic {
-    padding: 5%;
-}
-
-@media (min-width: 1020px) {
-
-    .profilebanner {
-        height: 75vh;
-    }
-
-    .profilebanner-bodycontainer {
-        padding-top: 50vh;
+@media (min-width: 960px) {
+    .profilebanner, .profilebanner-basicinfo {
+        aspect-ratio: 16/6;
     }
 
     .profilebanner-bodycontainer {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .profilebanner-left {
+        width: 55%;
     }
 
     .profilebanner-title {
@@ -90,19 +93,17 @@
     }
 
     .profilebanner-right {
-        width: 56ch;
+        display: block;
+        width: 45%;
+        max-width: 56ch;
         margin-left: 3rem;
     }
-    
-    .profilebanner-shift {
-        position: relative;
-        top: -37.25vh;
-        color: black;
-        background-color: var(--grey);
-    }
 
-    .profilebanner-basic {
-        padding: 3ch;
+    .profilebanner-basicinfo {
+        position: absolute;
+        top: 260px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 1.5rem;
     }
-
 }

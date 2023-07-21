@@ -1,0 +1,12 @@
+.profilebasicinfo-basic {
+    padding: 5%;
+    background: var(--grey);
+    color: black
+}
+
+@media (min-width: 800px) {
+
+    .profilebasicinfo-basic {
+        padding: 3ch;
+    }
+}

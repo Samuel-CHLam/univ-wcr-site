@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
 
 import "../../utilities.css"
-import "./About.css";
+import "./Profile.css";
 
 import TopBanner from "../modules/TopBanner";
 import ProfileBanner from "../modules/ProfileBanner";
+import ProfileBasicInfo from "../modules/ProfileBasicInfo";
 import ContentBlock from "../modules/ContentBlock";
 import BasicProfileEdit from "../modules/BasicProfileEdit";
 import ButtonFlex from "../modules/ButtonFlex";
@@ -59,7 +60,7 @@ const Profile = ({userId}) => {
     <>
       <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
       { !editBasicProfile ? (
-        <ContentBlock title={`Welcome ${currentUser.name}! Here is your profile!`}>
+        <ContentBlock title="Univ Engagement">
           <div className="profile-flex">
             <div>
               <p>Website: { currentUser.websiteLink ? (<a href={currentUser.websiteLink}>{currentUser.websiteLink}</a>) : (<>not provided</>)}</p>

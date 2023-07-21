@@ -1,7 +1,6 @@
 import React from "react";
 
-import Image from "./Image.js";
-
+import ProfileBasicInfo from "./ProfileBasicInfo";
 import "../../utilities.css";
 import "./ProfileBanner.css";
 
@@ -10,12 +9,12 @@ import "./ProfileBanner.css";
  * of a user.
  *
  * Proptypes
- * @param backgroundImage // link for background image
- * @param bgColorKey // primary, secondary, 
- * @param opacityLeft
- * @param opacityRight
- * @param content
- * @param des // describing the background image
+ * @param backgroundImage for link for background image
+ * @param bgColorKey choice of primary, secondary, blue, violet, black
+ * @param opacityLeft for background
+ * @param opacityRight for background
+ * @param textColor
+ * @param userObj for user object
  */
 
 import default_img_src from "../../img/logo/univ_192x192.png";
@@ -43,27 +42,30 @@ const ProfileBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight,
   }
   
   return (
-      <div className="profilebanner" style={bgStyle}>
-        <div className="profilebanner-bodycontainer">
-          <div className="profilebanner-left">
-            <h3 className="profilebanner-title" style={{color: `var(--${finalTextColor})`}}>Profile</h3>
-            <h1 className="profilebanner-content" style={{color: `var(--${finalTextColor})`}}> 
-              <span className="profilebanner-line"style={{color: `var(--${finalTextColor})`}}></span>
-              {userObj.name} 
-            </h1>
-          </div>
-          <div className="profilebanner-right">
-            <div className="profilebanner-shift">
-              <div style={{backgroundImage: `url(${userObj.profile_pic_link})`}} className="u-image u-aspect-43"> </div>
-              <div className="profilebanner-basic">
-                <p>Current Role <br/> <b>{userObj.wcrRole}</b></p>
-                <p>Subject <br/> <b>{userObj.subject}</b></p>
-                <p>Joined Univ Since <br/><b>{userObj.joinedUnivSince}</b></p>
-              </div>
+      <>
+        <div className="profilebanner" style={bgStyle}>
+          <div className="profilebanner-bodycontainer">
+            <div className="profilebanner-left">
+              <h3 className="profilebanner-title" style={{color: `var(--${finalTextColor})`}}>Profile</h3>
+              <h1 className="profilebanner-content" style={{color: `var(--${finalTextColor})`}}> 
+                <span className="profilebanner-line"style={{color: `var(--${finalTextColor})`}}></span>
+                {userObj.name} 
+              </h1>
+            </div>
+            <div className="profilebanner-right">
             </div>
           </div>
         </div>
-      </div>
+        <div className="profilebanner-basicinfo">
+          <div className="profilebanner-bodycontainer">
+            <div className="profilebanner-left">
+            </div>
+            <div className="profilebanner-right">
+              <ProfileBasicInfo userObj={userObj} />
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 
