@@ -41,13 +41,13 @@ const TopBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight, tex
   
   return (
       <div className="topbanner" style={bgStyle}>
-          <div className="topbanner-bodycontainer">
-              <h3 className="topbanner-title" style={{color: `var(--${finalTextColor})`}}> {title} </h3>
-              <h1 className="topbanner-content" style={{color: `var(--${finalTextColor})`}}> 
-                <span className="topbanner-line"style={{color: `var(--${finalTextColor})`}}></span>
-                {content} 
-              </h1>
-          </div>
+        <div className="topbanner-bodycontainer">
+          <h3 className="topbanner-title" style={{color: `var(--${finalTextColor})`}}> {title} </h3>
+          <h1 className="topbanner-content" style={{color: `var(--${finalTextColor})`}}> 
+            <span className="topbanner-line"style={{color: `var(--${finalTextColor})`}}></span>
+            {content} 
+          </h1>
+        </div>
       </div>
     );
   }

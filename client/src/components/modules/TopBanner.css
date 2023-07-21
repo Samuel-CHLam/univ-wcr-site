@@ -1,19 +1,20 @@
 .topbanner {
-    top: 81px;
     margin: 0;
+    width: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    overflow: visible;
     display: flex;
-    padding-top: 15vh;
-    height: 25vh;
+    flex-direction: column;
+    justify-content: end;
+    aspect-ratio: 16/9;
+    padding-bottom: 2rem;
 }
 
 .topbanner-bodycontainer {
-    position: relative;
     width: 80%;
     margin-inline: auto;
-    margin-bottom: 5vh;
     color: white;
     align-self: flex-end;
 }
@@ -45,8 +46,7 @@
 @media (min-width: 752px) {
 
     .topbanner {
-        height: 35vh;
-        padding-top: 40vh;
+        aspect-ratio: 16/6;
     }
 
     .topbanner-title {
@@ -57,11 +57,4 @@
       font-size: 2.5em;
     }
 
-}
-
-@media (min-width: 1600px) {
-    .topbanner {
-        height: 45vh;
-        padding-top: 40vh;
-    }
 }
