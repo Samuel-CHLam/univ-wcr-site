@@ -21,6 +21,12 @@ const ProfileBasicInfo = ( {userObj} ) => {
                 <p>Current Role <br/> <b>{userObj.wcrRole}</b></p>
                 <p>Subject <br/> <b>{userObj.subject}</b></p>
                 <p>Joined Univ Since <br/><b>{userObj.joinedUnivSince}</b></p>
+                <p>
+                  {userObj.websiteLink && (<a href={userObj.websiteLink}><i class="fa-solid fa-globe fa-3x"></i></a>)}
+                  {userObj.facebookLink && (<a href={userObj.facebookLink}><i class="fa-brands fa-facebook fa-3x"></i></a>)}
+                  {userObj.twitterLink && (<a href={userObj.twitterLink}><i class="fa-brands fa-twitter fa-3x"></i></a>)}
+                  {userObj.linkedInLink && (<a href={userObj.linkedInLink}><i class="fa-brands fa-linkedin fa-3x"></i></a>)}
+                </p>
             </div>
         </div>
     );

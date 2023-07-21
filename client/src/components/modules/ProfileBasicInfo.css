@@ -4,6 +4,10 @@
     color: black
 }
 
+.profilebasicinfo-basic a + a {
+    margin-left: 1ch;
+}
+
 @media (min-width: 800px) {
 
     .profilebasicinfo-basic {
