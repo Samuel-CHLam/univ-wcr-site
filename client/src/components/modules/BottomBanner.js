@@ -24,9 +24,9 @@ const BottomBanner = () => {
             <a href="https://www.univ.ox.ac.uk"><img src={univLogo} alt="University College, Oxford"/></a>
         </div>
         <div className="BottomBanner-sociallogo">
-            <img src={mailIcon} alt="mailing"/>
-            <a href="https://www.facebook.com/groups/433253188107301"><img src={facebookIcon} alt="facebook"/></a>
-            <a href="https://www.instagram.com/univwcr/"><img src={instaIcon} alt="instagram"/></a>
+            <a href="mailto:wcr.externalaffairs@univ.ox.ac.uk"><i class="fa-regular fa-envelope fa-2x" title="email"></i></a>
+            <a href="https://www.facebook.com/groups/433253188107301"><i class="fa-brands fa-facebook fa-2x" title="facebook"></i></a>
+            <a href="https://www.instagram.com/univwcr/"><i class="fa-brands fa-instagram fa-2x" title="instagram"></i></a>
         </div>
         <div className="BottomBanner-description"> 
             <p> © 2023 Weir Common Room, University College, Oxford </p>
