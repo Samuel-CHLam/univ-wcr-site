@@ -1,4 +1,4 @@
-.profilebanner, .profilebanner-basicinfo {
+.profilebanner {
     margin: 0;
     width: 100%;
     background-size: cover;
@@ -10,7 +10,6 @@
     justify-content: end;
     aspect-ratio: 16/9;
 }
-
 .profilebanner {
     padding-bottom: 2rem;
 }
@@ -19,6 +18,7 @@
     padding-bottom: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-inline: 10%;
 }
 
 .profilebanner-bodycontainer {
@@ -68,8 +68,9 @@
 }
 
 @media (min-width: 960px) {
-    .profilebanner, .profilebanner-basicinfo {
+    .profilebanner {
         aspect-ratio: 16/6;
+        max-height: 70vh;
     }
 
     .profilebanner-bodycontainer {
@@ -93,14 +94,14 @@
         display: block;
         width: 45%;
         max-width: 56ch;
-        margin-left: 3rem;
     }
 
     .profilebanner-basicinfo {
         position: absolute;
-        top: 13.5rem;
+        top: 30%;
         margin-top: 0;
         margin-bottom: 0;
-        padding-bottom: 1.5rem;
+        margin-inline: 0 10%;
+        left: 64%;
     }
 }

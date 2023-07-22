@@ -57,13 +57,7 @@ const ProfileBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight,
           </div>
         </div>
         <div className="profilebanner-basicinfo">
-          <div className="profilebanner-bodycontainer">
-            <div className="profilebanner-left">
-            </div>
-            <div className="profilebanner-right">
-              <ProfileBasicInfo userObj={userObj} />
-            </div>
-          </div>
+          <ProfileBasicInfo userObj={userObj} />
         </div>
       </>
     );

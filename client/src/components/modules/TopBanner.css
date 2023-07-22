@@ -47,6 +47,7 @@
 
     .topbanner {
         aspect-ratio: 16/6;
+        max-height: 70vh;
     }
 
     .topbanner-title {
