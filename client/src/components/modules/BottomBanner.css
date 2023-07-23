@@ -1,8 +1,7 @@
 .BottomBanner {
-    width: 100%;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-inline: 0;
+    padding-inline: 10%;
     top: 5rem;
     background-color: var(--primary);
     color: white;

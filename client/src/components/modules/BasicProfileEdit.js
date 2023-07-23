@@ -22,7 +22,7 @@ const BasicProfileEdit = ({userId, currentBasicProfile, afterSubmit}) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="basicprofileedit-item">
-        <div className="basicprofileedit-item-left">Name:</div>
+        <div className="basicprofileedit-item-left">Name and Pronoun:</div>
         <div className="basicprofileedit-item-right">
             <input {...register("name", {required: true, maxLength: 30})} placeholder="name" defaultValue={currentBasicProfile.name}/>
             {errors.name ? (

@@ -93,12 +93,11 @@
     .profilebanner-right {
         display: block;
         width: 45%;
-        max-width: 56ch;
     }
 
     .profilebanner-basicinfo {
         position: absolute;
-        top: 30%;
+        top: 20vh;
         margin-top: 0;
         margin-bottom: 0;
         margin-inline: 0 10%;

@@ -59,26 +59,27 @@ const Profile = ({userId}) => {
   return (
     <>
       <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
+      <ContentBlock title="Univ Engagement">
+        <div className="profile-engagement-container">
+          {currentUser.affliationArray.map((item) => {
+            return (<div className="profile-engagement"> {item.roleName}, {item.institutionName} {item.startYear}-{item.endYear && (<>{item.endYear}</>)}</div>)
+          })}
+        </div>
+      </ContentBlock>
       { !editBasicProfile ? (
-        <ContentBlock title="Univ Engagement">
-          <div className="profile-flex">
-            <div>
-              <p>Website: { currentUser.websiteLink ? (<a href={currentUser.websiteLink}>{currentUser.websiteLink}</a>) : (<>not provided</>)}</p>
-              <p>Facebook: { currentUser.facebookLink ? (<a href={currentUser.facebookLink}>{currentUser.facebookLink}</a>) : (<>not provided</>)}</p>
-              <p>Twitter: { currentUser.twitterLink ? (<a href={currentUser.twitterLink}>{currentUser.twitterLink}</a>) : (<>not provided</>)}</p>
-              <p>LinkedIn: { currentUser.linkedInLink ? (<a href={currentUser.linkedInLink}>{currentUser.linkedInLink}</a>) : (<>not provided</>)}</p>
-            </div>
-            {/* <img className="profile-img" src={ currentUser.profile_pic_link } /> */}
+        <ContentBlock>
+          <div className="profile-edit">
+            <ButtonFlex display={[{key: 1, onClick: onEditBasicProfile, des:"Click to edit your basic profile", color: "primary"}]}/>
           </div>
-          <ButtonFlex display={[{key: 1, onClick: onEditBasicProfile, des:"Click to edit your basic profile", color: "primary"}]}/>
         </ContentBlock>
       ) : (
-        <ContentBlock title="You are now editing your profile" >
-          <p>You are now editing your profile.</p>
-          <BasicProfileEdit userId={userId} currentBasicProfile={currentBasicProfile} afterSubmit={afterEditBasicProfile}/>
+        <ContentBlock title="You are now editing your profile">
+          <div className="profile-edit">
+            <BasicProfileEdit userId={userId} currentBasicProfile={currentBasicProfile} afterSubmit={afterEditBasicProfile}/>
+          </div>
         </ContentBlock>
       )}
-      
+
       <ContentBlock title="Personal introduction">
         { !editPersonalIntro ? (
           <>
