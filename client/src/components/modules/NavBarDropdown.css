@@ -1,4 +1,4 @@
-/* Trigger value - 1240px */
+/* Trigger value - 960px */
 
 .navbardropdown-menu {
     width: 200px;
@@ -29,7 +29,7 @@
   padding: 1rem 0.75rem;
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 960px) {
   .navbardropdown-menu {
     width: 100%;
     position: static;

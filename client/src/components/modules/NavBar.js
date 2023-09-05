@@ -11,6 +11,8 @@ import constitutionPDF from "../../data/WCR_constitution_2018.pdf";
 
 function NavBar ({ userId, handleLogin, handleLogout }) {
 
+  const displayminwidth = 960;
+
   // // login
   // const login = useGoogleLogin({
   //   onSuccess: () => handleLogin,
@@ -20,6 +22,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
 
   // hamburger menu
   const [click, setClick] = useState(false);
+  const [dropdownWhatsOn, setDropdownWhatsOn] = useState(false);
   const [dropdownAbout, setDropdownAbout] = useState(false);
   const [dropdownWelfare, setDropdownWelfare] = useState(false);
   const [dropdownEA, setDropdownEA] = useState(false); // for external affairs page
@@ -36,10 +39,22 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
     scrollToTop();
   }
 
+  // what's on pages
+
+  const onMouseEnterWhatsOn = () => {
+    if (window.innerwidth < displayminwidth) {setDropdownWhatsOn(false)} else {setDropdownWhatsOn(true)};
+  };
+
+  const onMouseLeaveWhatsOn = () => {setDropdownWhatsOn(false)};
+
+  const whatsOnSubpages = [
+    {title: "Activities A to Z", localpath: true, path: "/activitiesAtoZ"},
+  ]
+
   // about and governance pages
 
   const onMouseEnterAbout = () => {
-    if (window.innerwidth < 1200) {setDropdownAbout(false)} else {setDropdownAbout(true)};
+    if (window.innerwidth < displayminwidth) {setDropdownAbout(false)} else {setDropdownAbout(true)};
   };
 
   const onMouseLeaveAbout = () => {setDropdownAbout(false)};
@@ -53,7 +68,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   // welfare pages
 
   const onMouseEnterWelfare = () => {
-    if (window.innerwidth < 1200) {setDropdownWelfare(false)} else {setDropdownWelfare(true)};
+    if (window.innerwidth < displayminwidth) {setDropdownWelfare(false)} else {setDropdownWelfare(true)};
   };
 
   const onMouseLeaveWelfare = () => {setDropdownWelfare(false)};
@@ -66,7 +81,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   // external affairs pages
 
   const onMouseEnterEA = () => {
-    if (window.innerwidth < 1200) {setDropdownEA(false)} else {setDropdownEA(true)};
+    if (window.innerwidth < displayminwidth) {setDropdownEA(false)} else {setDropdownEA(true)};
   };
 
   const onMouseLeaveEA = () => {setDropdownEA(false)};
@@ -93,8 +108,10 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
 
           <ul className={click ? "navbar-menu active" : "navbar-menu"}>
 
-          <li className="navbar-item" onClick={collapseAfterClick}> 
-              <Link to="/events" className="navbar-links">Events</Link>
+            <li className="navbar-item" onMouseEnter={onMouseEnterWhatsOn} onMouseLeave={onMouseLeaveWhatsOn}> 
+              <Link to="/whatson" className="navbar-links">
+                What's on <i className="fas fa-caret-down"/> </Link>
+                {dropdownWhatsOn && <NavBarDropdown menuItems={whatsOnSubpages} />}
             </li>
 
             <li className="navbar-item" onClick={collapseAfterClick}> 
