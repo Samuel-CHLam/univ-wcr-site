@@ -7,6 +7,7 @@ import "../../utilities.css";
 import "./NavBar.css";
 
 import univLogo from "../../img/logo/univ_192x192.png";
+import constitutionPDF from "../../data/WCR_constitution_2018.pdf";
 
 function NavBar ({ userId, handleLogin, handleLogout }) {
 
@@ -20,6 +21,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   // hamburger menu
   const [click, setClick] = useState(false);
   const [dropdownAbout, setDropdownAbout] = useState(false);
+  const [dropdownWelfare, setDropdownWelfare] = useState(false);
   const [dropdownEA, setDropdownEA] = useState(false); // for external affairs page
 
   const closeMobileMenu = () => setClick(false);
@@ -35,6 +37,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   }
 
   // about and governance pages
+
   const onMouseEnterAbout = () => {
     if (window.innerwidth < 1200) {setDropdownAbout(false)} else {setDropdownAbout(true)};
   };
@@ -43,8 +46,21 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
 
   const aboutSubpages = [
     {title: "Governance", localpath: true, path: "/governance"},
-    {title: "Constitution (PDF)", localpath: true, path: ""},
-    {title: "Meeting Records", localpath: true, path: ""},
+    {title: "Constitution (PDF)", localpath: true, path: constitutionPDF},
+    {title: "Meeting records", localpath: true, path: ""},
+  ]
+
+  // welfare pages
+
+  const onMouseEnterWelfare = () => {
+    if (window.innerwidth < 1200) {setDropdownWelfare(false)} else {setDropdownWelfare(true)};
+  };
+
+  const onMouseLeaveWelfare = () => {setDropdownWelfare(false)};
+
+  const welfareSubpages = [
+    {title: "Welfare FAQ", localpath: true, path: ""},
+    {title: "Who's who", localpath: true, path: ""},
   ]
 
   // external affairs pages
@@ -56,7 +72,8 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   const onMouseLeaveEA = () => {setDropdownEA(false)};
 
   const eaSubpages = [
-    {title: "Policy directory", localpath: true, path: ""},
+    {title: "Voting records", localpath: true, path: ""},
+    {title: "Union policy directory", localpath: true, path: ""},
   ]
 
   return (
@@ -90,8 +107,11 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
                 {dropdownAbout && <NavBarDropdown menuItems={aboutSubpages} />}
             </li>
 
-            <li className="navbar-item"> 
-              <Link to="/welfare" className="navbar-links" onClick={collapseAfterClick}>Welfare</Link></li>
+            <li className="navbar-item" onMouseEnter={onMouseEnterWelfare} onMouseLeave={onMouseLeaveWelfare}> 
+              <Link to="/welfare" className="navbar-links">
+                Welfare <i className="fas fa-caret-down"/> </Link>
+                {dropdownWelfare && <NavBarDropdown menuItems={welfareSubpages} />}
+            </li>
 
             <li className="navbar-item" onMouseEnter={onMouseEnterEA} onMouseLeave={onMouseLeaveEA}> 
               <Link to="/about" className="navbar-links">
@@ -100,7 +120,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
             </li>
 
             <li className="navbar-item"> 
-              <Link to="/welfare" className="navbar-links" onClick={collapseAfterClick}>Contact Us</Link></li>
+              <Link to="/contact" className="navbar-links" onClick={collapseAfterClick}>Contact Us</Link></li>
 
             {userId ? (
               <li className="navbar-item">
