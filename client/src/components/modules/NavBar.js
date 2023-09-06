@@ -74,8 +74,8 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
   const onMouseLeaveWelfare = () => {setDropdownWelfare(false)};
 
   const welfareSubpages = [
-    {title: "Welfare FAQ", localpath: true, path: ""},
-    {title: "Who's who", localpath: true, path: ""},
+    {title: "Welfare FAQ", localpath: true, path: "/welfare/welfarefaq"},
+    {title: "Who's who", localpath: true, path: "/welfare/whoswho"},
   ]
 
   // external affairs pages
@@ -131,7 +131,7 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
             </li>
 
             <li className="navbar-item" onMouseEnter={onMouseEnterEA} onMouseLeave={onMouseLeaveEA}> 
-              <Link to="/about" className="navbar-links">
+              <Link to="/externalaffairs" className="navbar-links">
                 External Affairs <i className="fas fa-caret-down"/> </Link>
                 {dropdownEA && <NavBarDropdown menuItems={eaSubpages} />}
             </li>

@@ -94,7 +94,7 @@ button {
   padding: 0;
 }
 
-.u-block{
+.u-block {
   position: relative;
   width: 80%;
   padding: 0 10% 0% 10%;
@@ -184,7 +184,7 @@ button {
 }
 
 .u-margin-top {
-  margin-top: 12px;
+  margin-top: .75rem;
 }
 
 .u-image {
@@ -206,6 +206,28 @@ button {
   aspect-ratio: 1/1;
 }
 
+.u-gridPic-3, .u-gridPic-2 {
+  max-width: 24rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* This is the default, can change according to media queries */
+  grid-gap: 1.25rem;
+}
+
+@media (min-width: 752px) {
+  .u-gridPic-3 {
+    max-width: 100%;  
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 680px) {
+  .u-gridPic-2 {
+    max-width: 66%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 .u-b-primary, .u-b-primary:hover, .u-b-primary:visited {
   background-color: var(--primary);

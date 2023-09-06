@@ -12,7 +12,6 @@ const About = () => {
   return (
     <>
       <TopBanner backgroundImage={TopBannerImage} title="About" content="About" />
-      {/* <Fade cascade={true} direction="up" triggerOnce> */}
 
       <ContentBlock title="The graduate community of University College, Oxford.">
         <p>The main objectives of the common room are:</p>
@@ -53,8 +52,6 @@ const About = () => {
           <li>Music and TV facilities</li>
         </ul>
       </ContentBlock>
-      
-      {/* </Fade> */}
     </>
   );
 }
