@@ -13,6 +13,7 @@ import About from "./pages/About.js";
 import Welfare from "./pages/welfare/Welfare.js";
 import WelfareFAQ from "./pages/welfare/WelfareFAQ.js";
 import WhosWho from "./pages/welfare/WhosWho.js";
+import WhatsOn from "./pages/whatson/WhatsOn.js";
 import Profile from "./pages/Profile.js";
 
 import "../utilities.css";
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/welfare" element={<Welfare />} />
         <Route path="/welfare/welfarefaq" element={<WelfareFAQ />} />
         <Route path="/welfare/whoswho" element={<WhosWho />} />
+        <Route path="/whatson" element={<WhatsOn />} />
         <Route path="/privacyaccessibility" element={<Accessibility />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
