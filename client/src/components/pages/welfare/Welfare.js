@@ -57,7 +57,7 @@ const Welfare = () => {
         </div>
         <ButtonFlex display={[
           {key: 1, isLocal: true, des: "Welfare FAQ", link: "/welfareFAQ"},
-          {key: 2, isLocal: false, des: "Official welfare booklet", link: "#"}
+          {key: 2, isLocal: false, des: "Official welfare booklet", link: "https://intranet.univ.ox.ac.uk/sites/default/files/Student%20Welfare%20Full%20Guide%2003%20Jan%202023.pdf"}
         ]}/>
       </ContentBlock>
 
