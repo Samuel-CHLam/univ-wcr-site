@@ -1,26 +1,53 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 // import { Fade } from "react-awesome-reveal";
 
+import axios from "axios";
+import Image from "../../modules/Image";
 import "../../../utilities.css"
 import "./WhatsOn.css";
 import "../NotFound.css";
+import EventShortDes from "../../modules/EventShortDes";
 import ButtonFlex from "../../modules/ButtonFlex";
 
 const WhatsOn = () => {
-    return (
-      <>
-          {/* <Fade cascade={true} direction="up" triggerOnce> */}
-          <div className="u-block">
-              <h1 className="u-section-title">Events</h1>
-              <p>Please search below upcoming events happening in the college.</p>
-          </div>
-          <div className="u-block">
-          <h1 className="u-section-title">Or you want to hear about us more...</h1>
-              <ButtonFlex />
-          </div>
-          {/* </Fade> */}
-      </>
-    );
-  }
+  const [events, setEvents] = useState([]);
+
+  const getEvents = async () => {
+    const response = await axios.get("http://localhost:1337/api/events?sort=startDate&pagination[pageSize]=200&populate=banner&populate=mainContact&populate=nature");
+    console.log(response);
+    setEvents(response.data.data);
+  };
+
+  useEffect(() => {getEvents();}, []);
+
+  console.log(events);
+
+  return (
+    <>
+      <div className="u-block">
+        <h1 className="u-section-title">Events</h1>
+        <p>Please search below upcoming events happening in the college.</p>
+        <div className="u-gridPic-3">
+          {events.reverse().map(
+              (item) => {
+                return (
+                  <Image 
+                    key={item.id}
+                    title="" 
+                    src={item.attributes.banner.data ? "http://localhost:1337" + item.attributes.banner.data.attributes.url : ""}
+                    opacity={item.attributes.banner.data ? 1 : .5}
+                    isBlack={Boolean(true)}
+                    aspect="16/9"
+                    suppressArrow={Boolean(true)}
+                    des={<EventShortDes attributes={item.attributes}/>}
+                    linkdes="/governance"
+                    isLocal={Boolean(true)}/>
+                )}
+            )}
+        </div>
+      </div>
+    </>
+  );
+};
   
 export default WhatsOn;

@@ -1,0 +1,8 @@
+.eventshortdes-nature {
+    font-size: .9rem;
+    padding-inline: .25rem;
+}
+
+.eventshortdes-nature + .eventshortdes-nature {
+    margin-left: .25rem;
+}
