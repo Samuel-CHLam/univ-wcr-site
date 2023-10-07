@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { GoogleLogin, googleLogout } from "@react-oauth/google";
+// import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import NavBarDropdown from "./NavBarDropdown.js";
 
 import "../../utilities.css";
@@ -9,7 +9,11 @@ import "./NavBar.css";
 import univLogo from "../../img/logo/univ_192x192.png";
 import constitutionPDF from "../../data/WCR_constitution_2018.pdf";
 
-function NavBar ({ userId, handleLogin, handleLogout }) {
+function NavBar ({ 
+  userId, 
+  // handleLogin, 
+  // handleLogout 
+}) {
 
   const displayminwidth = 960;
 
@@ -144,14 +148,14 @@ function NavBar ({ userId, handleLogin, handleLogout }) {
                 <Link to="/profile" className="navbar-links" onClick = {collapseAfterClick}>Your profile</Link></li>
             ) : (<></>)}
 
-            <li className="navbar-item">
+            {/* <li className="navbar-item">
               {userId ? (
                 <button onClick={() => {googleLogout(); handleLogout();}}> Logout </button>
               ) : (
                 <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
                 // <button onClick={() => {login();}}> Login using Google </button>
               )}
-            </li>
+            </li> */}
           </ul>
       </nav>
     </>
