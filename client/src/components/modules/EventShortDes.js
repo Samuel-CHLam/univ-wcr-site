@@ -27,7 +27,7 @@ const EventShortDes = ({attributes}) => {
               {key: "Music", bkgColor: "rgb(255,87,51)", textColor: "#FFF"},
               {key: "Other", bkgColor: "rgb(69,69,69)", textColor: "#FFF"},
               {key: "Social", bkgColor: "rgb(148,18,118)", textColor: "#FFF"},
-              {key: "Sport", bkgColor: "rgb(0,59,121)", textColor: "#FFF"},
+              {key: "Sports", bkgColor: "rgb(0,59,121)", textColor: "#FFF"},
               {key: "Welfare and Access", bkgColor: "#539728", textColor: "#FFF"},
             ];
 
