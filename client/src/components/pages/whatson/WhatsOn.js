@@ -14,7 +14,6 @@ const WhatsOn = () => {
 
   const getEvents = async () => {
     const response = await axios.get("http://localhost:1337/api/events?sort=startDate&pagination[pageSize]=200&populate=banner&populate=mainContact&populate=nature");
-    console.log(response);
     setEvents(response.data.data);
   };
 
@@ -28,7 +27,7 @@ const WhatsOn = () => {
         <h1 className="u-section-title">Events</h1>
         <p>Please search below upcoming events happening in the college.</p>
         <div className="u-gridPic-3">
-          {events.reverse().map(
+          {events.map(
               (item) => {
                 return (
                   <Image 
