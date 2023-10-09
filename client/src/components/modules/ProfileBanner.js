@@ -49,7 +49,7 @@ const ProfileBanner = ( {backgroundImage, bgColorKey, opacityLeft, opacityRight,
               <h3 className="profilebanner-title" style={{color: `var(--${finalTextColor})`}}>Profile</h3>
               <h1 className="profilebanner-content" style={{color: `var(--${finalTextColor})`}}> 
                 <span className="profilebanner-line"style={{color: `var(--${finalTextColor})`}}></span>
-                {userObj.name} 
+                {userObj.preferredName} ({userObj.preferredPronoun}) 
               </h1>
             </div>
             <div className="profilebanner-right">

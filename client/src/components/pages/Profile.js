@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 import "../../utilities.css"
 import "./Profile.css";
@@ -12,46 +14,28 @@ import BasicProfileEdit from "../modules/BasicProfileEdit";
 import ButtonFlex from "../modules/ButtonFlex";
 import PersonalIntroEdit from "../modules/PersonalIntroEdit";
 
-const Profile = ({userId}) => {
+const Profile = () => {
+  let { userName } = useParams();
+
   const [currentUser, setCurrentUser] = useState({});
-  const [editBasicProfile, setEditBasicProfile] = useState(false);
-  const [editPersonalIntro, setEditPersonalIntro] = useState(false);
+  const [currentEngage, setCurrentEngage] = useState({});
 
   const fetchUser = async () => {
-    if (userId) {
-        const anotherUser = await get("/api/user", {googleid: userId});
-        setCurrentUser(anotherUser);
-        }
-        else {
-            console.log("you need to login!")
-        };
-      }
+    const BaseURL = "http://localhost:1337/api";
+    const resUser = await axios.get(`${BaseURL}/users?filters[username][$eq]=${userName}&populate=profilePicture`);
+    const resEngage = await axios.get(`${BaseURL}/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`)
+    console.log(resUser.data[0]);
+    console.log(resEngage.data.data);
+    setCurrentUser(resUser.data[0]);
+    setCurrentEngage(resEngage.data.data);
+    }
 
-  useEffect(() => {fetchUser();}, [userId]); // make sure to call the useEffect once again when the userId input changes.
-
-  const onEditBasicProfile = () => {setEditBasicProfile(true)};
-  const afterEditBasicProfile = () => {fetchUser().then(setEditBasicProfile(!editBasicProfile))};
-  const onEditPersonalIntro = () => {setEditPersonalIntro(true); console.log(editPersonalIntro)};
-  const afterEditPersonalIntro = () => {fetchUser().then(setEditPersonalIntro(!editPersonalIntro))};
-
-  const currentBasicProfile = {
-    name: currentUser.name,
-    wcrRole: currentUser.wcrRole,
-    subject: currentUser.subject,
-    joinedUnivSince: currentUser.joinedUnivSince,
-    websiteLink: currentUser.websiteLink,
-    facebookLink: currentUser.facebookLink,
-    twitterLink: currentUser.twitterLink,
-    linkedInLink: currentUser.linkedInLink
-  };
-
-  const currentPersonalIntro = currentUser.personalIntro;
-
+  useEffect(() => {fetchUser();}, []);
   
-  if (!currentUser.name) {
+  if (!currentUser.preferredName) {
     return (
       <>
-        <TopBanner title="" content="You do not have permission to visit this page" />
+        <TopBanner title="" content="This profile does not exist." />
         <div className="u-block">Please contact us for further assistance.</div>
       </>
     )
@@ -61,43 +45,23 @@ const Profile = ({userId}) => {
       <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
       <ContentBlock title="Univ Engagement">
         <div className="profile-engagement-container">
-          {currentUser.affliationArray.map((item) => {
-            return (<div className="profile-engagement"> {item.roleName}, {item.institutionName} {item.startYear}-{item.endYear && (<>{item.endYear}</>)}</div>)
-          })}
+          {currentEngage.sort((item1, item2) => {return (item2.attributes.startDate > item1.attributes.startDate)}).map((item) => {
+            const startYear = new Date(item.attributes.startDate);
+            const endYear = new Date(item.attributes.endDate) || "";
+
+            return (
+              <div className="profile-engagement"> 
+                {item.attributes.Name}, {item.attributes.Organisation} {startYear.getFullYear()}-
+                {endYear && (<>{endYear.getFullYear()}</>)}</div>
+                );
+              }
+            )
+          }
         </div>
       </ContentBlock>
-      { !editBasicProfile ? (
-        <ContentBlock>
-          <div className="profile-edit">
-            <ButtonFlex display={[{key: 1, onClick: onEditBasicProfile, des:"Click to edit your basic profile", color: "primary"}]}/>
-          </div>
-        </ContentBlock>
-      ) : (
-        <ContentBlock title="You are now editing your profile">
-          <div className="profile-edit">
-            <BasicProfileEdit userId={userId} currentBasicProfile={currentBasicProfile} afterSubmit={afterEditBasicProfile}/>
-          </div>
-        </ContentBlock>
-      )}
 
       <ContentBlock title="Personal introduction">
-        { !editPersonalIntro ? (
-          <>
-            <div dangerouslySetInnerHTML={{ __html: currentUser.personalIntro}} />
-            <ButtonFlex display={[{key: 1, onClick: onEditPersonalIntro, des:"Click to edit your personal introduction", color: "primary"}]}/>
-          </>
-        ) : (
-          <>
-            <p><b>Please note:</b> for the safety of the website, only the following types of contents (html tags) are allowed: 
-              Normal paragraph <code>{"<p>"}</code>, headings in level 3 and 4 <code>{"<h3>, <h4>"}</code>, bold <code>{"<b>"}</code>, 
-              italics <code>{"<i>"}</code>, underline <code>{"<u>"}</code>, anchor/link <code>{"<a>"}</code>, unordered lists <code>{"<ul>"}</code> and 
-              ordered list <code>{"<ol>"}</code> with list items <code>{"<li>"}</code>. Although there might be other type of contents included 
-              in the editor, they will be sanitised before being rendered. We will consider adding more functionalities in the future.
-            </p>
-            <ButtonFlex display={[{key: 1, isLocal: false, link: "https://stackoverflow.com/questions/38663751/how-to-safely-render-html-in-react", des: "Find out how we render your personal introduction"}]}/>
-            <PersonalIntroEdit userId={userId} currentPersonalIntro={currentPersonalIntro} afterSubmit={afterEditPersonalIntro}/>
-          </>
-        )}
+        <div dangerouslySetInnerHTML={{ __html: currentUser.personalIntro}} />
       </ContentBlock>
     </>
   );
