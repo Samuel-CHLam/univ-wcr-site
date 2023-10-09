@@ -8,11 +8,7 @@ import "./Profile.css";
 
 import TopBanner from "../modules/TopBanner";
 import ProfileBanner from "../modules/ProfileBanner";
-import ProfileBasicInfo from "../modules/ProfileBasicInfo";
 import ContentBlock from "../modules/ContentBlock";
-import BasicProfileEdit from "../modules/BasicProfileEdit";
-import ButtonFlex from "../modules/ButtonFlex";
-import PersonalIntroEdit from "../modules/PersonalIntroEdit";
 
 const Profile = () => {
   let { userName } = useParams();
@@ -47,12 +43,12 @@ const Profile = () => {
         <div className="profile-engagement-container">
           {currentEngage.sort((item1, item2) => {return (item2.attributes.startDate > item1.attributes.startDate)}).map((item) => {
             const startYear = new Date(item.attributes.startDate);
-            const endYear = new Date(item.attributes.endDate) || "";
+            const endYear = item.attributes.endDate ? new Date(item.attributes.endDate) : "";
 
             return (
               <div className="profile-engagement"> 
                 {item.attributes.Name}, {item.attributes.Organisation} {startYear.getFullYear()}-
-                {endYear && (<>{endYear.getFullYear()}</>)}</div>
+                {endYear ? (<>{endYear.getFullYear()}</>) : (<></>)}</div>
                 );
               }
             )
