@@ -18,25 +18,20 @@ const Profile = () => {
 
   const fetchUser = async () => {
     const BaseURL = "http://localhost:1337/api";
-    const resUser = await axios.get(`${BaseURL}/users?filters[username][$eq]=${userName}&populate=profilePicture`);
-    const resEngage = await axios.get(`${BaseURL}/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`)
-    console.log(resUser.data[0]);
-    console.log(resEngage.data.data);
+    const resUser = await axios.get(
+      `${BaseURL}/users?filters[username][$eq]=${userName}&populate=profilePicture`
+      ).then().catch(e => {console.log(e)});
+    const resEngage = await axios.get(
+      `${BaseURL}/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`
+      ).then().catch(e => console.log(e));
+
     setCurrentUser(resUser.data[0]);
-    setCurrentEngage(resEngage.data.data);
-    }
+    setCurrentEngage(resEngage.data.data);}
 
   useEffect(() => {fetchUser();}, []);
-  
-  if (!currentUser.preferredName) {
+
+  try {
     return (
-      <>
-        <TopBanner title="" content="This profile does not exist." />
-        <div className="u-block">Please contact us for further assistance.</div>
-      </>
-    )
-  }
-  return (
     <>
       <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
       <ContentBlock title="Univ Engagement">
@@ -61,6 +56,17 @@ const Profile = () => {
       </ContentBlock>
     </>
   );
-}
+
+  } catch (err) {
+    console.log(err);
+
+    return (
+      <>
+        <TopBanner title="" content="This profile does not exist." />
+        <div className="u-block">Please contact us for further assistance.</div>
+      </>
+    )
+    
+  }};
 
 export default Profile;

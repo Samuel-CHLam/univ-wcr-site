@@ -22,10 +22,11 @@ const ProfileBasicInfo = ( {userObj} ) => {
                 <p>Subject <br/> <b>{userObj.subject}</b></p>
                 <p>Joined Univ Since <br/><b>{userObj.joinedUnivSince}</b></p>
                 <p>
-                  {userObj.websiteLink && (<a href={userObj.websiteLink}><i class="fa-solid fa-globe fa-3x"></i></a>)}
-                  {userObj.facebookLink && (<a href={userObj.facebookLink}><i class="fa-brands fa-facebook fa-3x"></i></a>)}
-                  {userObj.twitterLink && (<a href={userObj.twitterLink}><i class="fa-brands fa-twitter fa-3x"></i></a>)}
-                  {userObj.linkedInLink && (<a href={userObj.linkedInLink}><i class="fa-brands fa-linkedin fa-3x"></i></a>)}
+                  {userObj.univIntroLink && (<a href={userObj.univIntroLink}><img src={default_img_src} style={{width: 40, margin: 0, padding: 0}}/></a>)}
+                  {userObj.websiteLink && (<a href={userObj.websiteLink}><i className="fa-solid fa-globe fa-3x"></i></a>)}
+                  {userObj.facebookLink && (<a href={userObj.facebookLink}><i className="fa-brands fa-facebook fa-3x"></i></a>)}
+                  {userObj.twitterLink && (<a href={userObj.twitterLink}><i className="fa-brands fa-twitter fa-3x"></i></a>)}
+                  {userObj.linkedInLink && (<a href={userObj.linkedInLink}><i className="fa-brands fa-linkedin fa-3x"></i></a>)}
                 </p>
             </div>
         </div>
