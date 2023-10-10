@@ -118,9 +118,9 @@ function NavBar ({
                 {dropdownWhatsOn && <NavBarDropdown menuItems={whatsOnSubpages} />}
             </li>
 
-            <li className="navbar-item" onClick={collapseAfterClick}> 
+            {/* <li className="navbar-item" onClick={collapseAfterClick}> 
               <Link to="/news" className="navbar-links">News</Link>
-            </li>
+            </li> */}
 
             <li className="navbar-item" onMouseEnter={onMouseEnterAbout} onMouseLeave={onMouseLeaveAbout}> 
               <Link to="/about" className="navbar-links">
