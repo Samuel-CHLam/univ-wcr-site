@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
  * @param {boolean} isLocal to tell if the image is local or not
  */
 
-const Image = ({title, opacity, aspect, isBlack, src, des, suppressArrow, linkdes, isLocal}) => {
+const Image = ({title, opacity, aspect, isBlack, src, des, suppressArrow, linkdes, isLocal, altText}) => {
   let backgroundColor = 255;
   let textColor = "black";
 
@@ -32,9 +32,12 @@ const Image = ({title, opacity, aspect, isBlack, src, des, suppressArrow, linkde
 
     return (
       <div>
-          <div style={{backgroundImage: `linear-gradient(rgba(${backgroundColor}, ${backgroundColor}, ${backgroundColor}, ${1-opacity || 0}), 
+          <div 
+            style={{backgroundImage: `linear-gradient(rgba(${backgroundColor}, ${backgroundColor}, ${backgroundColor}, ${1-opacity || 0}), 
           rgba(${backgroundColor},${backgroundColor},${backgroundColor}, ${1-opacity || 0})), 
-          url(${src})`}} className={`image aspect-${aspect || "default"}`}> 
+          url(${src})`}} 
+            className={`image aspect-${aspect || "default"}`}
+            title={altText}> 
           {des ? (<>
             {isLocal ? (
               <Link to={linkdes} style={{color: textColor}} className="Image-link" onClick={scrollToTop}> 

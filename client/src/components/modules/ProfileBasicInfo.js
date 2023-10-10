@@ -16,7 +16,10 @@ import default_img_src from "../../img/logo/univ_192x192.png";
 const ProfileBasicInfo = ( {userObj} ) => {
   return (
         <div>
-            <div style={{backgroundImage: `url(http://localhost:1337${userObj.profilePicture.url})`}} className="u-image u-aspect-43"> </div>
+            <div style={
+              {backgroundImage: `url(http://localhost:1337${userObj.profilePicture.url})`}} 
+              className="u-image u-aspect-43" 
+              title={userObj.profilePicture.alternativeText}> </div>
             <div className="profilebasicinfo-basic">
                 <p>Current Role <br/> <b>{userObj.wcrRole}</b></p>
                 <p>Subject <br/> <b>{userObj.subject}</b></p>
