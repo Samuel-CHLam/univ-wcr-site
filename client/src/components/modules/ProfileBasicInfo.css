@@ -1,7 +1,7 @@
 .profilebasicinfo-basic {
     padding: 5%;
     background: var(--grey);
-    color: black
+    color: black;
 }
 
 .profilebasicinfo-basic a + a {

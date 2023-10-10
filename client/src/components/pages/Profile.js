@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { get } from "../../utilities";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Markdown from "react-markdown";
 
 import "../../utilities.css"
 import "./Profile.css";
@@ -57,7 +57,7 @@ const Profile = () => {
       </ContentBlock>
 
       <ContentBlock title="Personal introduction">
-        <div dangerouslySetInnerHTML={{ __html: currentUser.personalIntro}} />
+        <Markdown>{currentUser.personalIntro}</Markdown>
       </ContentBlock>
     </>
   );
