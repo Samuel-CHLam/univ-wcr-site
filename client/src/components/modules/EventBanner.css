@@ -1,0 +1,134 @@
+.eventbanner {
+    margin: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    aspect-ratio: 16/9;
+    padding-bottom: 2rem;
+}
+
+.eventbanner-basicinfo {
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-inline: 10%;
+}
+
+.eventbanner-bodycontainer {
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+}
+
+.eventbanner-left {
+    width: 100%;
+}
+
+.eventbanner-title {
+    margin: 0px;
+    color: #FFFFFF;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.eventbanner-line {
+    display: block;
+    width: 100%;
+    height: .08em;
+    background-color: currentColor;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+  }
+
+.eventbanner-content {
+    position: relative;
+    top: 10px;
+    font-size: 2em;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.eventbanner-right {
+    width: 90%;
+    padding: 1.5rem 5%;
+    background-color: var(--grey);
+    color: black,
+}
+
+.eventbanner-nature {
+    font-size: .9rem;
+    padding-inline: .25rem;
+}
+
+.eventbanner-nature + .eventbanner-nature {
+    margin-left: .25rem;
+}
+
+.eventbanner-register {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    margin-bottom: .5rem;
+}
+
+.eventbanner-eventlink {
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin-bottom: .5rem;
+}
+
+.eventbanner-image {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 960px) {
+    .eventbanner {
+        aspect-ratio: 16/6;
+        max-height: 70vh;
+    }
+
+    .eventbanner-bodycontainer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .eventbanner-left {
+        width: 55%;
+    }
+
+    .eventbanner-title {
+        font-size: 1.5em;
+    }
+
+    .eventbanner-content {
+      font-size: 2.5em;
+    }
+
+    .eventbanner-right {
+        display: block;
+        width: 40%;
+        margin-left: 5%;
+        padding: 1.5rem;
+        color: black;
+    }
+
+    .eventbanner-basicinfo {
+        position: absolute;
+        top: 30vh;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-inline: 0 10%;
+        left: 60%;
+        width: 30%;
+    }
+}

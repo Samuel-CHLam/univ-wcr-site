@@ -19,8 +19,6 @@ const WhatsOn = () => {
 
   useEffect(() => {getEvents();}, []);
 
-  console.log(events);
-
   return (
     <>
       <div className="u-block">
