@@ -3,22 +3,21 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "../../utilities.css"
-import "./CurrentComm.css";
+import "./PastComm.css";
 
 import default_img_src from "../../img/logo/univ_192x192.png";
 
+const PastCommittee = () => {
 
-const CurrentCommittee = () => {
-
-  const [currentComm, setCurrentComm] = useState([]);
+  const [previousComm, setPreviousComm] = useState([]);
 
   const fetchComm = async () => {
     const BaseURL = "http://localhost:1337/api";
-    const resCurrent = await axios.get(
-      `${BaseURL}/users?populate[role][fields][0]=type&filters[role][type][$eq]=wcr_committee_member&populate[profilePicture][fields][0]=url`
-      ).then(console.log(resCurrent)).catch(e => {console.log(e)});
+    const resPrevious = await axios.get(
+      `${BaseURL}/users?populate[role][fields][0]=type&filters[role][type][$eq]=previous_wcr_committee_member&populate[profilePicture][fields][0]=url`
+      ).then(console.log(resPrevious)).catch(e => {console.log(e)});
 
-    setCurrentComm(resCurrent.data);
+    setPreviousComm(resPrevious.data);
   };
 
   useEffect(() => {fetchComm();}, []);
@@ -35,8 +34,8 @@ const CurrentCommittee = () => {
 
   return (
     <div className="CurrentComm-container">
-        {currentComm.sort(
-          (comm1, comm2) => {return comm1.orderOfDisplay > comm2.orderOfDisplay}
+        {previousComm.sort(
+          (comm1, comm2) => {return comm1.preferredName > comm2.preferredName}
         ).map(
           (comm) => { 
           let bG
@@ -52,7 +51,7 @@ const CurrentCommittee = () => {
               <div className="CurrentComm-background" style={{backgroundImage: bG}}> </div>
               <div className="CurrentComm-about"> 
                   <div className="name"> <b>{comm.preferredName}</b> ({comm.preferredPronoun}) </div>
-                  <div className="post"> {comm.wcrRole} </div>
+                  {/* <div className="post"> {comm.wcrRole} </div> */}
               </div>
               </Link>
             </div>
@@ -62,4 +61,4 @@ const CurrentCommittee = () => {
   );
 };
   
-export default CurrentCommittee;
+export default PastCommittee;

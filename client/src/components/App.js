@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound.js";
 import Accessibility from "./pages/Accessibility.js";
 import Home from "./pages/Home.js";
 import About from "./pages/About.js";
+import Governance from "./pages/Governance.js";
 import Welfare from "./pages/welfare/Welfare.js";
 import WelfareFAQ from "./pages/welfare/WelfareFAQ.js";
 import WhosWho from "./pages/welfare/WhosWho.js";
@@ -62,6 +63,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/governance" element={<Governance />} />
         <Route path="/profile/:userName" element={<Profile />} />
         <Route path="/welfare" element={<Welfare />} />
         <Route path="/welfare/welfarefaq" element={<WelfareFAQ />} />
