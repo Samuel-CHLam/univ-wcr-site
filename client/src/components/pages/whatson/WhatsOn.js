@@ -37,7 +37,7 @@ const WhatsOn = () => {
                     aspect="16/9"
                     suppressArrow={Boolean(true)}
                     des={<EventShortDes attributes={item.attributes}/>}
-                    linkdes="/governance"
+                    linkdes={`/whatson/${item.id}`}
                     isLocal={Boolean(true)}
                     altText={item.attributes.banner.data ? item.attributes.banner.data.attributes.alternativeText : ""}/>
                 )}
