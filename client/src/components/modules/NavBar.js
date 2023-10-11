@@ -65,8 +65,8 @@ function NavBar ({
 
   const aboutSubpages = [
     {title: "Governance", localpath: true, path: "/governance"},
-    {title: "Constitution (PDF)", localpath: true, path: constitutionPDF},
-    {title: "Meeting records", localpath: true, path: ""},
+    {title: "Constitution (PDF)", localpath: false, path: constitutionPDF},
+    // {title: "Meeting records", localpath: true, path: ""},
   ]
 
   // welfare pages
