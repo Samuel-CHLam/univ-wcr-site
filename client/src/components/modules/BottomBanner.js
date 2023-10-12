@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "../../utilities.css";
 import "./BottomBanner.css";
+import ContentBlock from "./ContentBlock";
+import ButtonFlex from "./ButtonFlex";
 import oxfordLogo from "../../img/logo/oxLogo.svg";
 import univLogo from "../../img/logo/univ_badge.png";
-import mailIcon from "../../img/icon/envelop.svg";
-import facebookIcon from "../../img/icon/facebook.svg";
-import instaIcon from "../../img/icon/instagram.svg";
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -18,6 +17,20 @@ const scrollToTop = () => {
 
 const BottomBanner = () => {
   return (
+      <>
+      <ContentBlock title="About WCR">
+        <p>
+          The WCR has a double meaning: it refers to the graduate body of students at University College and also 
+          to the physical space in the College where graduate students can relax and socialise. It is an engaging 
+          and diverse community of early-researchers consisting around 150 members across all year groups and subjects. 
+          Whether you are here for a one/two-year Masters programme or a DPhil programme we do hope you choose to get 
+          involved with college life!
+        </p>
+      </ContentBlock>
+
+      <ContentBlock>
+        <ButtonFlex />
+      </ContentBlock>
       <div className="u-block u-textCenter u-darkgrey BottomBanner"> 
         <div className="BottomBanner-unionlogo">
             <a href="https://www.ox.ac.uk"><img src={oxfordLogo} alt="University of Oxford"/></a>
@@ -37,6 +50,7 @@ const BottomBanner = () => {
             Lam</a>. Vector icons by <a className="author" href="https://icomoon.io/app">IcoMoon</a>. </p>
         </div>
       </div>
+      </>
   );
 };
 
