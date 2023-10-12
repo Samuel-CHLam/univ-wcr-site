@@ -14,7 +14,6 @@ import "./Society.css";
 
 const Society = () => {
   let {abbreviation} = useParams();
-  console.log(abbreviation);
 
   const [society, setSociety] = useState({});
 

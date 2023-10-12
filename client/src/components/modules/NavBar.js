@@ -53,6 +53,7 @@ function NavBar ({
 
   const whatsOnSubpages = [
     {title: "Societies A to Z", localpath: true, path: "/societies"},
+    {title: "Support for societies", localpath: true, path: "/societies/supports"},
   ]
 
   // about and governance pages

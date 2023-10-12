@@ -1,0 +1,56 @@
+.CurrentComm-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1.25rem;
+    text-align: left;
+}
+
+.CurrentComm-container > * {
+    aspect-ratio: 16/9;
+}
+
+.CurrentComm-single {
+    position: relative;
+}
+
+.CurrentComm-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    filter: contrast(0.8);
+}
+
+.CurrentComm-about {
+    position: absolute;
+    bottom: 0px;
+    width: 90%;
+    color: white;
+    background-color: rgba(0,0,0,.5);
+    padding: .75rem 5%;
+}
+
+.name {
+    font-size: 1.25em;
+}
+
+.post {
+    font-size: 1em;
+}
+
+@media screen and (max-width: 752px) {
+    .CurrentComm-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 496px) {
+    .CurrentComm-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

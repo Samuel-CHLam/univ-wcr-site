@@ -1,51 +1,43 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 // import { Fade } from "react-awesome-reveal";
 
-import axios from "axios";
-import Image from "../../modules/Image";
 import "../../../utilities.css"
-import "./WhatsOn.css";
-import "../NotFound.css";
-import EventShortDes from "../../modules/EventShortDes";
+import "./SocietyAZ.css";
+// import TopBannerImage from "../../img/topbanner/WCR_all_committee.jpg";
+import roomBooking from "../../../data/pinkSlip.pdf"
+
+import TopBanner from "../../modules/TopBanner";
+import ContentBlock from "../../modules/ContentBlock";
+import AllSocieties from "../../modules/AllSocieties";
 import ButtonFlex from "../../modules/ButtonFlex";
 
-const WhatsOn = () => {
-  const [events, setEvents] = useState([]);
+const SocietyAZ = () => {
 
-  const getEvents = async () => {
-    const response = await axios.get("http://localhost:1337/api/events?sort=startDate&pagination[pageSize]=200&populate=banner&populate=mainContact&populate=nature");
-    setEvents(response.data.data);
-  };
+  return (<>
+    <TopBanner title="What's On" content="Societies" />
 
-  useEffect(() => {getEvents();}, []);
-
-  return (
-    <>
-      <div className="u-block">
-        <h1 className="u-section-title">Events</h1>
-        <p>Please search below upcoming events happening in the college.</p>
-        <div className="u-gridPic-3">
-          {events.map(
-              (item) => {
-                return (
-                  <Image 
-                    key={item.id}
-                    title="" 
-                    src={item.attributes.banner.data ? "http://localhost:1337" + item.attributes.banner.data.attributes.url : ""}
-                    opacity={item.attributes.banner.data ? 1 : .5}
-                    isBlack={Boolean(true)}
-                    aspect="16/9"
-                    suppressArrow={Boolean(true)}
-                    des={<EventShortDes attributes={item.attributes}/>}
-                    linkdes={`/whatson/${item.id}`}
-                    isLocal={Boolean(true)}
-                    altText={item.attributes.banner.data ? item.attributes.banner.data.attributes.alternativeText : ""}/>
-                )}
-            )}
-        </div>
-      </div>
+    {/* <Fade cascade={true} direction="up" triggerOnce> */}
+    <ContentBlock title="Societies">
+      <p>At Univ, there are many student college societies run for members of the college to 
+        fulfil many different potential interests. The societies are sometimes run soley 
+        by WCR members, or jointly with JCR. If you have an interest in joining 
+        any of these societies, you can get in touch with the listed contact for the 
+        society of interest and find out how you can get involved. You can also join other 
+        university societies as well.</p>
+        <ButtonFlex display={[
+          {key: 1, isLocal: true, des: "Create a college society!", link: "/societies/supports"},
+          {key: 2, isLocal: false, des: "Info for hosting college events", link: roomBooking}
+        ]}/>
+    </ContentBlock>
+    <ContentBlock title="Societies A to Z">
+      <p>Please browse below the list of college societies available for postgraduates. 
+        The list is incomplete, and does not include undergraduate societies. See above for 
+        registering your societies in our listings.</p>
+        <AllSocieties />
+    </ContentBlock>
+    {/* </Fade> */}
     </>
   );
-};
-  
-export default WhatsOn;
+}
+
+export default SocietyAZ;
