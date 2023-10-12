@@ -35,18 +35,23 @@ const SupportSocieties = () => {
         <li>3 full working days for events held in college meeting rooms</li>
         <li>48 hours for events held in accommodations</li>
       </ul>
-      <p>The college reserves right to terminate any events that do not comply with the above regulations. 
-        Organising or participating such events may lead to disciplinary actions.
+      <p><b>You should also include details of external speaker in your application.</b> The 
+        college reserves right to terminate any events that do not comply with the above 
+        regulations. Organising or participating events without a pink slip may lead to 
+        disciplinary actions.
       </p>
+      <p><b>University clubs are not allowed to host events in the college unless booked by a college member 
+        who is the president of the society. Event of such could not be advertised to general public.</b></p>
       <ButtonFlex display={[
           {key: 1, isLocal: false, des: "Click here for latest room booking information", link: roomBooking}
         ]}/>
     </ContentBlock>
     <ContentBlock title="Promotion on the WCR Website">
       <p>Any societies that are led by WCR members, or having sufficient involvement in WCR could 
-        create a page in this WCR website for promotion. Please contact the <Link to="/profile/Samuel-CHLam">external affairs officer</Link> 
-        or email <a href="mailto:wcr.externalaffairs@univ.ox.ac.uk">wcr.externalaffairs@univ.ox.ac.uk</a> if you wish to do so. Please 
-        include the following details:
+        create a page in this WCR website for promotion. Please contact 
+        the <Link to="/profile/Samuel-CHLam">external affairs officer</Link> or 
+        email <a href="mailto:wcr.externalaffairs@univ.ox.ac.uk">wcr.externalaffairs@univ.ox.ac.uk</a> if 
+        you wish to do so. Please include the following details:
       </p>
       <ul>
         <li>Name of your society</li>
@@ -61,9 +66,9 @@ const SupportSocieties = () => {
         the <Link to="/profile/Samuel-CHLam">external affairs officer</Link> or 
         email <a href="mailto:wcr.externalaffairs@univ.ox.ac.uk">wcr.externalaffairs@univ.ox.ac.uk</a> for more information.</p>
     </ContentBlock>
-    <ContentBlock title="Funding">
-      <p>Any societies that are led by WCR members could apply funding from WCR. Please contact 
-        the <Link to="/profile/Lovisa-Reiche">Treasurer</Link> for information. Applications of funding 
+    <ContentBlock title="WCR Funding">
+      <p>Any societies that are led by WCR members, or having sufficient involvement in WCR could apply funding from WCR. Please contact 
+        the <Link to="/profile/Lovisa-Reiche">Treasurer</Link> <b>separately</b> for information. Applications of funding 
         will be discussed during a WCR committee meeting.
       </p>
     </ContentBlock>

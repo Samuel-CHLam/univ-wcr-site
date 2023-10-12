@@ -16,10 +16,6 @@ const NotFound = () => {
               <h1 className="u-section-title">Your requested page could not be found</h1>
               <p>Please navigate to your desired page using the navigation bar.</p>
           </div>
-          <div className="u-block">
-          <h1 className="u-section-title">Or you want to hear about us more...</h1>
-              <ButtonFlex />
-          </div>
           {/* </Fade> */}
       </>
     );
