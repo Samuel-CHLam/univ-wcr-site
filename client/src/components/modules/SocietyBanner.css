@@ -1,0 +1,134 @@
+.societybanner {
+    margin: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    aspect-ratio: 16/9;
+    padding-bottom: 2rem;
+}
+
+.societybanner-basicinfo {
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-inline: 10%;
+}
+
+.societybanner-bodycontainer {
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+}
+
+.societybanner-left {
+    width: 100%;
+}
+
+.societybanner-title {
+    margin: 0px;
+    color: #FFFFFF;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.societybanner-line {
+    display: block;
+    width: 100%;
+    height: .08em;
+    background-color: currentColor;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+  }
+
+.societybanner-content {
+    position: relative;
+    top: 10px;
+    font-size: 2em;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.societybanner-right {
+    width: 90%;
+    padding: 1.5rem 5%;
+    background-color: var(--grey);
+    color: black,
+}
+
+.societybanner-nature {
+    font-size: .9rem;
+    padding-inline: .25rem;
+}
+
+.societybanner-nature + .societybanner-nature {
+    margin-left: .25rem;
+}
+
+.societybanner-register {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    margin-bottom: .5rem;
+}
+
+.societybanner-eventlink {
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin-bottom: .5rem;
+}
+
+.societybanner-image {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 960px) {
+    .societybanner {
+        aspect-ratio: 16/6;
+        max-height: 70vh;
+    }
+
+    .societybanner-bodycontainer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .societybanner-left {
+        width: 55%;
+    }
+
+    .societybanner-title {
+        font-size: 1.5em;
+    }
+
+    .societybanner-content {
+      font-size: 2.5em;
+    }
+
+    .societybanner-right {
+        display: block;
+        width: 40%;
+        margin-left: 5%;
+        padding: 1.5rem;
+        color: black;
+    }
+
+    .societybanner-basicinfo {
+        position: absolute;
+        top: 30vh;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-inline: 0 10%;
+        left: 60%;
+        width: 30%;
+    }
+}

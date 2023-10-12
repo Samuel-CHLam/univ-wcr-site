@@ -52,7 +52,7 @@ function NavBar ({
   const onMouseLeaveWhatsOn = () => {setDropdownWhatsOn(false)};
 
   const whatsOnSubpages = [
-    {title: "Activities A to Z", localpath: true, path: "/activitiesAtoZ"},
+    {title: "Societies A to Z", localpath: true, path: "/societies"},
   ]
 
   // about and governance pages

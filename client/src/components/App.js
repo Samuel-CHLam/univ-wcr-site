@@ -16,6 +16,7 @@ import WelfareFAQ from "./pages/welfare/WelfareFAQ.js";
 import WhosWho from "./pages/welfare/WhosWho.js";
 import WhatsOn from "./pages/whatson/WhatsOn.js";
 import Event from "./pages/whatson/Event.js";
+import Society from "./pages/whatson/Society.js";
 import Profile from "./pages/Profile.js";
 
 import "../utilities.css";
@@ -69,6 +70,7 @@ const App = () => {
         <Route path="/welfare" element={<Welfare />} />
         <Route path="/welfare/welfarefaq" element={<WelfareFAQ />} />
         <Route path="/welfare/whoswho" element={<WhosWho />} />
+        <Route path="/societies/:abbreviation" element={<Society />} />
         <Route path="/whatson/:eventId" element={<Event />} />
         <Route path="/whatson" element={<WhatsOn />} />
         <Route path="/privacyaccessibility" element={<Accessibility />} />
