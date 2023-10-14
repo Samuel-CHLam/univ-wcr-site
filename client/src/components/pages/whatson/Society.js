@@ -6,7 +6,6 @@ import Markdown from "react-markdown";
 
 import SocietyBanner from "../../modules/SocietyBanner";
 import ContentBlock from "../../modules/ContentBlock";
-import ButtonFlex from "../../modules/ButtonFlex";
 
 import "../../../utilities.css"
 import "./Society.css";

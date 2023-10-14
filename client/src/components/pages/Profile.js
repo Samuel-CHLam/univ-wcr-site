@@ -53,12 +53,12 @@ const Profile = () => {
       <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
       <ContentBlock title="Univ Engagement">
         <div className="profile-engagement-container">
-          {currentEngage.sort((item1, item2) => {return (item2.attributes.startDate > item1.attributes.startDate)}).map((item) => {
+          {currentEngage.sort((item1, item2) => {return (item2.attributes.startDate > item1.attributes.startDate)}).map((item, idx) => {
             const startYear = new Date(item.attributes.startDate);
             const endYear = item.attributes.endDate ? new Date(item.attributes.endDate) : "";
 
             return (
-              <div className="profile-engagement"> 
+              <div key={idx} className="profile-engagement"> 
                 {item.attributes.Name}, {item.attributes.Organisation} {startYear.getFullYear()}-
                 {endYear ? (<>{endYear.getFullYear()}</>) : (<></>)}</div>
                 );
