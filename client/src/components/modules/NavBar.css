@@ -90,7 +90,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1080px) {
   .navbar-menu {
     display: flex;
     flex-direction: column;

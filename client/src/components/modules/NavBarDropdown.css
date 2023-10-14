@@ -29,7 +29,7 @@
   padding: 1rem 0.75rem;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1080px) {
   .navbardropdown-menu {
     width: 100%;
     position: static;
