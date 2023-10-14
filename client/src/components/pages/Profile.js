@@ -13,25 +13,42 @@ import ContentBlock from "../modules/ContentBlock";
 const Profile = () => {
   let { userName } = useParams();
 
-  const [currentUser, setCurrentUser] = useState({});
-  const [currentEngage, setCurrentEngage] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentUser, setCurrentUser] = useState();
+  const [currentEngage, setCurrentEngage] = useState();
 
   const fetchUser = async () => {
+    setIsLoading(true);
     const BaseURL = "http://localhost:1337/api";
+
     const resUser = await axios.get(
-      `${BaseURL}/users?filters[username][$eq]=${userName}&populate=profilePicture`
-      ).then().catch(e => {console.log(e)});
-    const resEngage = await axios.get(
-      `${BaseURL}/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`
-      ).then().catch(e => console.log(e));
+      `${BaseURL}/users?filters[username][$eq]=${userName}&populate=profilePicture`);
+    const resEngage = await axios.get(`${BaseURL}/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`);
 
     setCurrentUser(resUser.data[0]);
-    setCurrentEngage(resEngage.data.data);}
+    setCurrentEngage(resEngage.data.data);
+    setIsLoading(false);
+  };
 
   useEffect(() => {fetchUser();}, []);
 
-  try {
+  if (isLoading) {
+    <>
+      <TopBanner title="" content="Loading!" />
+      <div className="u-block">Thank you for your patience.</div>
+    </>
+  }
+
+  if (!currentUser || !currentEngage) {
     return (
+      <>
+        <TopBanner title="" content="This profile does not exist." />
+        <div className="u-block">Please contact us for further assistance.</div>
+      </>
+    )
+  }
+  
+  return (
     <>
       <ProfileBanner title="Profile" userObj={currentUser} bgColorKey="secondary" />
       <ContentBlock title="Univ Engagement">
@@ -56,17 +73,6 @@ const Profile = () => {
       </ContentBlock>
     </>
   );
-
-  } catch (err) {
-    console.log(err);
-
-    return (
-      <>
-        <TopBanner title="" content="This profile does not exist." />
-        <div className="u-block">Please contact us for further assistance.</div>
-      </>
-    )
-    
-  }};
+};
 
 export default Profile;
