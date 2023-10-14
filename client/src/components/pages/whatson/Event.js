@@ -20,7 +20,6 @@ const Event = () => {
 
   const getEvent = async () => {
     const response = await axios.get(`http://localhost:1337/api/events/${eventId}?populate=banner&populate=mainContact&populate=nature`).then().catch((e) => console.log(e));
-    console.log(response.data.data.attributes);
     setEvent(response.data.data.attributes);
   };
 
