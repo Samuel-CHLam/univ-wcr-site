@@ -13,7 +13,6 @@ import "./societybanner.css";
 
 const SocietyBanner = ( {societyObj} ) => {
   let finalKey = societyObj.nature || "Other"
-  console.log(finalKey)
   let bgStyle = {};
   
   try {

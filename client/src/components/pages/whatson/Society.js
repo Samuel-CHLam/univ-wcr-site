@@ -20,7 +20,6 @@ const Society = () => {
   const getSociety = async () => {
     const BaseURL = "http://localhost:1337/api";
     const resSoc = await axios.get(`${BaseURL}/societies?filters[abbreviation][$eq]=${abbreviation}&populate=banner`).then().catch((e) => console.log(e));
-    console.log(resSoc);
     setSociety(resSoc.data.data[0].attributes);
   };
 

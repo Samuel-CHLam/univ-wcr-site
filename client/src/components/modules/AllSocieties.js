@@ -30,8 +30,6 @@ const AllSocieties = () => {
     }, 50)
   };
 
-  console.log(societies);
-
   return (
     <div className="CurrentComm-container">
         {societies.sort(

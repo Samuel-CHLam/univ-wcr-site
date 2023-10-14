@@ -15,7 +15,7 @@ const PastCommittee = () => {
     const BaseURL = "http://localhost:1337/api";
     const resPrevious = await axios.get(
       `${BaseURL}/users?populate[role][fields][0]=type&filters[role][type][$eq]=previous_wcr_committee_member&populate[profilePicture][fields][0]=url`
-      ).then(console.log(resPrevious)).catch(e => {console.log(e)});
+      ).then().catch(e => {console.log(e)});
 
     setPreviousComm(resPrevious.data);
   };

@@ -16,7 +16,7 @@ const CurrentCommittee = () => {
     const BaseURL = "http://localhost:1337/api";
     const resCurrent = await axios.get(
       `${BaseURL}/users?populate[role][fields][0]=type&filters[role][type][$eq]=wcr_committee_member&populate[profilePicture][fields][0]=url`
-      ).then(console.log(resCurrent)).catch(e => {console.log(e)});
+      ).then().catch(e => {console.log(e)});
 
     setCurrentComm(resCurrent.data);
   };

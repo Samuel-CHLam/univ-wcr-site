@@ -9,11 +9,8 @@ import "./NavBar.css";
 import univLogo from "../../img/logo/univ_192x192.png";
 import constitutionPDF from "../../data/WCR_constitution_2018.pdf";
 
-function NavBar ({ 
-  userId, 
-  // handleLogin, 
-  // handleLogout 
-}) {
+function NavBar () {
+  // ( userId, handleLogin, handleLogout )
 
   const displayminwidth = 960;
 
@@ -144,10 +141,10 @@ function NavBar ({
             <li className="navbar-item"> 
               <Link to="/contact" className="navbar-links" onClick={collapseAfterClick}>Contact Us</Link></li>
 
-            {userId ? (
+            {/* {userId ? (
               <li className="navbar-item">
-                <Link to="/profile" className="navbar-links" onClick = {collapseAfterClick}>Your profile</Link></li>
-            ) : (<></>)}
+                <Link to=`/profile/{username}` className="navbar-links" onClick = {collapseAfterClick}>Your profile</Link></li>
+            ) : (<></>)} */}
 
             {/* <li className="navbar-item">
               {userId ? (

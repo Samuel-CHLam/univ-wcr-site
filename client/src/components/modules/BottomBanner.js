@@ -26,9 +26,6 @@ const BottomBanner = () => {
           Whether you are here for a one/two-year Masters programme or a DPhil programme we do hope you choose to get 
           involved with college life!
         </p>
-      </ContentBlock>
-
-      <ContentBlock>
         <ButtonFlex />
       </ContentBlock>
       <div className="u-block u-textCenter u-darkgrey BottomBanner"> 
