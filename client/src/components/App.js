@@ -67,9 +67,9 @@ const App = () => {
         <Route path="/welfare/whoswho" element={<WhosWho />} />
         <Route exact path="/societies/supports" element={<SupportSocieties />} />
         <Route path="/societies/:abbreviation" element={<Society />} />
-        <Route path="/societies" element={<SocietyAZ />} />
+        <Route exact path="/societies" element={<SocietyAZ />} />
         <Route path="/whatson/:eventId" element={<Event />} />
-        <Route path="/whatson" element={<WhatsOn />} />
+        <Route exact path="/whatson" element={<WhatsOn />} />
         <Route path="/privacyaccessibility" element={<Accessibility />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
