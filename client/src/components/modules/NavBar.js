@@ -132,11 +132,11 @@ function NavBar () {
                 {dropdownWelfare && <NavBarDropdown menuItems={welfareSubpages} />}
             </li>
 
-            <li className="navbar-item" onMouseEnter={onMouseEnterEA} onMouseLeave={onMouseLeaveEA}> 
+            {/* <li className="navbar-item" onMouseEnter={onMouseEnterEA} onMouseLeave={onMouseLeaveEA}> 
               <Link to="/externalaffairs" className="navbar-links">
                 External Affairs <i className="fas fa-caret-down"/> </Link>
                 {dropdownEA && <NavBarDropdown menuItems={eaSubpages} />}
-            </li>
+            </li> */}
 
             <li className="navbar-item"> 
               <Link to="/contact" className="navbar-links" onClick={collapseAfterClick}>Contact Us</Link></li>
