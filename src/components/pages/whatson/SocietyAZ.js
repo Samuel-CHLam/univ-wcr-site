@@ -25,7 +25,7 @@ const SocietyAZ = () => {
         society of interest and find out how you can get involved. You can also join other 
         university societies as well.</p>
         <ButtonFlex display={[
-          {key: 1, isLocal: true, des: "Create a college society!", link: "/societies/supports"},
+          {key: 1, isLocal: true, des: "Create a college society!", link: "/societies-supports"},
           {key: 2, isLocal: false, des: "Info for hosting college events", link: roomBooking}
         ]}/>
     </ContentBlock>

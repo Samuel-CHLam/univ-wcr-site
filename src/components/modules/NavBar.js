@@ -49,8 +49,9 @@ function NavBar () {
   const onMouseLeaveWhatsOn = () => {setDropdownWhatsOn(false)};
 
   const whatsOnSubpages = [
-    {title: "Societies A to Z", localpath: true, path: "/societies"},
-    {title: "Support for societies", localpath: true, path: "/societies/supports"},
+    {title: "List of events", localpath: true, path: "/whatson"},
+    {title: "Societies A to Z", localpath: true, path: "/societiesAtoZ"},
+    {title: "Support for societies", localpath: true, path: "/societies-supports"},
   ]
 
   // about and governance pages
@@ -77,7 +78,7 @@ function NavBar () {
 
   const welfareSubpages = [
     {title: "Welfare FAQ", localpath: true, path: "/welfare/welfarefaq"},
-    {title: "Who's who", localpath: true, path: "/welfare/whoswho"},
+    // {title: "Who's who", localpath: true, path: "/welfare/whoswho"},
   ]
 
   // external affairs pages
@@ -86,12 +87,12 @@ function NavBar () {
     if (window.innerwidth < displayminwidth) {setDropdownEA(false)} else {setDropdownEA(true)};
   };
 
-  const onMouseLeaveEA = () => {setDropdownEA(false)};
+  // const onMouseLeaveEA = () => {setDropdownEA(false)};
 
-  const eaSubpages = [
-    {title: "Voting records", localpath: true, path: ""},
-    {title: "Union policy directory", localpath: true, path: ""},
-  ]
+  // const eaSubpages = [
+  //   {title: "Voting records", localpath: true, path: ""},
+  //   {title: "Union policy directory", localpath: true, path: ""},
+  // ]
 
   return (
     <>

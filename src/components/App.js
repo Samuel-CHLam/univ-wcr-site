@@ -65,10 +65,10 @@ const App = () => {
         <Route path="/welfare" element={<Welfare />} />
         <Route path="/welfare/welfarefaq" element={<WelfareFAQ />} />
         <Route path="/welfare/whoswho" element={<WhosWho />} />
-        <Route exact path="/societies/supports" element={<SupportSocieties />} />
+        <Route exact path="/societies-supports" element={<SupportSocieties />} />
         <Route exact path="/societies/:abbreviation" element={<Society />} />
-        <Route exact path="/societies" element={<SocietyAZ />} />
-        <Route path="/whatson/:eventId" element={<Event />} />
+        <Route exact path="/societiesAtoZ" element={<SocietyAZ />} />
+        <Route path="/events/:eventId" element={<Event />} />
         <Route exact path="/whatson" element={<WhatsOn />} />
         <Route path="/privacyaccessibility" element={<Accessibility />} />
         <Route path="*" element={<NotFound />} />
