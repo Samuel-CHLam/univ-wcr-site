@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 // import { Fade } from "react-awesome-reveal";
 
 import axios from "axios";
+import ContentBlock from "../../modules/ContentBlock";
 import Image from "../../modules/Image";
 import TopBanner from "../../modules/TopBanner";
 import EventShortDes from "../../modules/EventShortDes";
@@ -24,8 +25,7 @@ const WhatsOn = () => {
   return (
     <>
       <TopBanner title="What's On" content="List of Events" />
-      <div className="u-block">
-        <h1 className="u-section-title">Events</h1>
+      <ContentBlock title="Events">
         <p>Please search below upcoming events happening in the college.</p>
         <div className="u-gridPic-3">
           {events.filter(
@@ -48,7 +48,7 @@ const WhatsOn = () => {
                 )}
             )}
         </div>
-      </div>
+      </ContentBlock>
     </>
   );
 };
