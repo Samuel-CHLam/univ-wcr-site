@@ -20,12 +20,13 @@ const Profile = () => {
   const fetchUser = async () => {
     setIsLoading(true);
 
-    const resUser = await axios.get(`/users?filters[username][$eq]=${userName}&populate=profilePicture`);
-    const resEngage = await axios.get(`/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`);
+    const resUser = await axios.get(`https://samuelchlam.herokuapp.com/api/users?filters[username][$eq]=${userName}&populate=profilePicture`);
+    const resEngage = await axios.get(`https://samuelchlam.herokuapp.com/api/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`);
 
-    // const resUser = await axios.get(`/api/prev-comms?filters[username][$eq]=${userName}&populate=profilePicture`);
-    // const resEngage = await axios.get(`/api/univ-engagements?populate[prevComm][fields][0]=username&filters[prevComm][username][$eq]=${userName}`)
-
+    // const resUser = await axios.get(`https://samuelchlam.herokuapp.com/api/prev-comms?filters[username][$eq]=${userName}&populate=profilePicture`);
+    // const resEngage = await axios.get(`https://samuelchlam.herokuapp.com/api/univ-engagements?populate[prevComm][fields][0]=username&filters[prevComm][username][$eq]=${userName}`)
+    
+    console.log(resUser.data[0])
 
     setCurrentUser(resUser.data[0]);
     setCurrentEngage(resEngage.data.data);
@@ -61,7 +62,7 @@ const Profile = () => {
 
             return (
               <div key={idx} className="profile-engagement"> 
-                {item.attributes.Name}, {item.attributes.Organisation} {startYear.getFullYear()}-
+                {item.attributes.name}, {item.attributes.organisation} {startYear.getFullYear()}-
                 {endYear ? (<>{endYear.getFullYear()}</>) : (<></>)}</div>
                 );
               }

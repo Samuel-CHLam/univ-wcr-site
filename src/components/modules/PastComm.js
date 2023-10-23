@@ -12,15 +12,14 @@ const PastCommittee = () => {
   const [previousComm, setPreviousComm] = useState([]);
 
   const fetchComm = async () => {
-    const BaseURL = "http://localhost:1337/api";
     const resPrevious = await axios.get(
-      `${BaseURL}/users?populate[role][fields][0]=type&filters[role][type][$eq]=previous_wcr_committee_member&populate[profilePicture][fields][0]=url`
+      `https://samuelchlam.herokuapp.com/api/prev-comms?populate[profilePicture][fields][0]=url`
       ).then().catch(e => {console.log(e)});
 
-    setPreviousComm(resPrevious.data);
+    setPreviousComm(resPrevious.data.data);
   };
 
-  useEffect(() => {fetchComm();}, []);
+  useEffect(() => {fetchComm().then(console.log(previousComm));}, []);
 
   const scrollToTop = () => {
     setTimeout(
@@ -32,26 +31,28 @@ const PastCommittee = () => {
     }, 50)
   };
 
+  console.log(previousComm)
+
   return (
     <div className="CurrentComm-container">
         {previousComm.sort(
-          (comm1, comm2) => {return comm1.preferredName > comm2.preferredName}
+          (comm1, comm2) => {return comm1.attributes.preferredName > comm2.attributes.preferredName}
         ).map(
           (comm) => { 
           let bG
-          if (comm.profilePicture) {
-            bG = `url("http://localhost:1337${comm.profilePicture.url}")`;
+          if (comm.attributes.profilePicture) {
+            bG = `url("${comm.attributes.profilePicture.data.attributes.url}")`;
           } else {
             bG = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("${default_img_src}")`;
           }
 
           return (
             <div key={comm.id} className="CurrentComm-single">
-              <Link to={`/profile/${comm.username}`} onClick={scrollToTop}>
+              <Link to={`/profile/${comm.attributes.username}`} onClick={scrollToTop}>
               <div className="CurrentComm-background" style={{backgroundImage: bG}}> </div>
               <div className="CurrentComm-about"> 
-                  <div className="name"> <b>{comm.preferredName}</b> ({comm.preferredPronoun}) </div>
-                  {/* <div className="post"> {comm.wcrRole} </div> */}
+                  <div className="name"> <b>{comm.attributes.preferredName}</b> ({comm.attributes.preferredPronoun}) </div>
+                  <div className="post"> {comm.attributes.wcrRole} </div>
               </div>
               </Link>
             </div>

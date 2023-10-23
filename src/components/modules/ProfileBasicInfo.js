@@ -17,7 +17,7 @@ const ProfileBasicInfo = ( {userObj} ) => {
   return (
         <div>
             <div style={
-              {backgroundImage: `url(http://localhost:1337${userObj.profilePicture.url})`}} 
+              {backgroundImage: `url(${userObj.profilePicture.url})`}} 
               className="u-image u-aspect-43" 
               title={userObj.profilePicture.alternativeText}> </div>
             <div className="profilebasicinfo-basic">
