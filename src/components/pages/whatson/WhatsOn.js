@@ -3,11 +3,12 @@ import React, {useState, useEffect} from "react";
 
 import axios from "axios";
 import Image from "../../modules/Image";
+import TopBanner from "../../modules/TopBanner";
+import EventShortDes from "../../modules/EventShortDes";
+
 import "../../../utilities.css"
 import "./WhatsOn.css";
 import "../NotFound.css";
-import EventShortDes from "../../modules/EventShortDes";
-import ButtonFlex from "../../modules/ButtonFlex";
 
 const WhatsOn = () => {
   const [events, setEvents] = useState([]);
@@ -22,11 +23,14 @@ const WhatsOn = () => {
 
   return (
     <>
+      <TopBanner title="What's On" content="List of Events" />
       <div className="u-block">
         <h1 className="u-section-title">Events</h1>
         <p>Please search below upcoming events happening in the college.</p>
         <div className="u-gridPic-3">
-          {events.map(
+          {events.filter(
+            (item) => new Date(item.attributes.startDate) > new Date()
+            ).map(
               (item) => {
                 return (
                   <Image 
