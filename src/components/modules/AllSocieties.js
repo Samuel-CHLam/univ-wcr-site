@@ -33,7 +33,7 @@ const AllSocieties = () => {
   return (
     <div className="CurrentComm-container">
         {societies.sort(
-          (soc1, soc2) => {return soc1.attributes.title > soc2.attributes.title}
+          (soc1, soc2) => {return soc1.attributes.shortName > soc2.attributes.shortName}
         ).map(
           (soc) => { 
           
