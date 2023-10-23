@@ -7,15 +7,12 @@ import "./CurrentComm.css";
 
 import default_img_src from "../../img/logo/univ_192x192.png";
 
-
 const CurrentCommittee = () => {
 
   const [currentComm, setCurrentComm] = useState([]);
 
   const fetchComm = async () => {
-    const BaseURL = "http://localhost:1337/api";
-    const resCurrent = await axios.get(
-      `${BaseURL}/users?populate[role][fields][0]=type&filters[role][type][$eq]=wcr_committee_member&populate[profilePicture][fields][0]=url`
+    const resCurrent = await axios.get(`https://samuelchlam.herokuapp.com/api/users?populate[role][fields][0]=type&filters[role][type][$eq]=wcr_committee_member&populate[profilePicture][fields][0]=url`
       ).then().catch(e => {console.log(e)});
 
     setCurrentComm(resCurrent.data);
@@ -41,7 +38,7 @@ const CurrentCommittee = () => {
           (comm) => { 
           let bG
           if (comm.profilePicture) {
-            bG = `url("http://localhost:1337${comm.profilePicture.url}")`;
+            bG = `url("${comm.profilePicture.url}")`;
           } else {
             bG = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("${default_img_src}")`;
           }

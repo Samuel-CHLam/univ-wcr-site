@@ -19,11 +19,13 @@ const Profile = () => {
 
   const fetchUser = async () => {
     setIsLoading(true);
-    const BaseURL = "http://localhost:1337/api";
 
-    const resUser = await axios.get(
-      `${BaseURL}/users?filters[username][$eq]=${userName}&populate=profilePicture`);
-    const resEngage = await axios.get(`${BaseURL}/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`);
+    const resUser = await axios.get(`/users?filters[username][$eq]=${userName}&populate=profilePicture`);
+    const resEngage = await axios.get(`/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`);
+
+    // const resUser = await axios.get(`/api/prev-comms?filters[username][$eq]=${userName}&populate=profilePicture`);
+    // const resEngage = await axios.get(`/api/univ-engagements?populate[prevComm][fields][0]=username&filters[prevComm][username][$eq]=${userName}`)
+
 
     setCurrentUser(resUser.data[0]);
     setCurrentEngage(resEngage.data.data);
