@@ -19,20 +19,14 @@ const Event = () => {
   const [event, setEvent] = useState({});
 
   const getEvent = async () => {
-    const response = await axios.get(`http://localhost:1337/api/events/${eventId}?populate=banner&populate=mainContact&populate=nature`).then().catch((e) => console.log(e));
+    const BaseURL = "https://samuelchlam.herokuapp.com/api"
+    const response = await axios.get(`${BaseURL}/events/${eventId}?populate=natures&populate=banner`
+    + "&populate=wcrContacts" + "&populate=prevCommContacts" 
+      ).then().catch((e) => console.log(e));
     setEvent(response.data.data.attributes);
   };
 
   useEffect(() => {getEvent();}, []);
-
-  let mainEventContact;
-
-  try {
-    mainEventContact = event.mainContact.data
-  }
-  catch {
-    mainEventContact = []
-  }
 
   return (
     <>
@@ -41,10 +35,13 @@ const Event = () => {
         <Markdown>{event.description}</Markdown>
       </ContentBlock>
       <ContentBlock title="Contacts">
+        <h2>MCR Contacts</h2>
         <ul>
-          {mainEventContact && (mainEventContact.map((item) => <li key={item.attributes.username}><Link to={`/profile/${item.attributes.username}`}>{item.attributes.preferredName}</Link></li>))}
-          {event.otherContact && <li>{event.otherContact}</li>}
+          {event.wcrContacts && event.wcrContacts.data.map((item, idx) => <li key={idx}><Link to={`/profile/${item.attributes.username}`}>{item.attributes.preferredName}</Link></li>)}
+          {event.prevCommContacts && event.prevCommContacts.data.map((item, idx) => <li key={idx}>{item.attributes.preferredName}</li>)}
         </ul>
+        <h2>Other Contacts</h2>
+        <Markdown>{event.otherContacts}</Markdown>
       </ContentBlock>
     </>
   );

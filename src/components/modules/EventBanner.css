@@ -77,6 +77,7 @@
     background-color: var(--primary);
     color: white;
     margin-bottom: .5rem;
+    cursor: pointer;
 }
 
 .eventbanner-eventlink {
@@ -84,6 +85,7 @@
     background-color: var(--secondary);
     color: var(--primary);
     margin-bottom: .5rem;
+    cursor: pointer;
 }
 
 .eventbanner-image {

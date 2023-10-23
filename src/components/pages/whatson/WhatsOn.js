@@ -13,7 +13,8 @@ const WhatsOn = () => {
   const [events, setEvents] = useState([]);
 
   const getEvents = async () => {
-    const response = await axios.get("http://localhost:1337/api/events?sort=startDate&pagination[pageSize]=200&populate=banner&populate=mainContact&populate=nature");
+    const BaseURL = "https://samuelchlam.herokuapp.com/api"
+    const response = await axios.get(`${BaseURL}/events?sort=startDate&pagination[pageSize]=200&populate=banner&populate=mainContact&populate=natures`);
     setEvents(response.data.data);
   };
 
@@ -31,7 +32,7 @@ const WhatsOn = () => {
                   <Image 
                     key={item.id}
                     title="" 
-                    src={item.attributes.banner.data ? "http://localhost:1337" + item.attributes.banner.data.attributes.url : ""}
+                    src={item.attributes.banner.data ? item.attributes.banner.data.attributes.url : ""}
                     opacity={item.attributes.banner.data ? 1 : .5}
                     isBlack={Boolean(true)}
                     aspect="16/9"
