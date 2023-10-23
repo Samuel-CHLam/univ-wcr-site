@@ -23,8 +23,8 @@ const Profile = () => {
     const resUser = await axios.get(`https://samuelchlam.herokuapp.com/api/users?filters[username][$eq]=${userName}&populate=profilePicture`);
     const resEngage = await axios.get(`https://samuelchlam.herokuapp.com/api/univ-engagements?populate[user][fields][0]=username&filters[user][username][$eq]=${userName}`);
 
-    // const resUser = await axios.get(`https://samuelchlam.herokuapp.com/api/prev-comms?filters[username][$eq]=${userName}&populate=profilePicture`);
-    // const resEngage = await axios.get(`https://samuelchlam.herokuapp.com/api/univ-engagements?populate[prevComm][fields][0]=username&filters[prevComm][username][$eq]=${userName}`)
+    // const resUser = await axios.get('http://localhost:1337/api/prev-comms').then(console.log("user")).catch(e => console.log(e));
+    // const resEngage = await axios.get(`http://localhost:1337/api/univ-engagements?populate[prevComm][fields][0]=username&filters[prevComm][username][$eq]=Jacob-Ridley`).then(console.log("engage")).catch(e => console.log(e));
     
     console.log(resUser.data[0])
 
