@@ -18,7 +18,7 @@ const SocietyBanner = ( {societyObj} ) => {
   try {
     bgStyle = {backgroundImage: `linear-gradient(rgba(0,0,0,0.5), 
       rgba(0,0,0,0.5)), 
-      url(http://localhost:1337${societyObj.banner.data.attributes.url})`};
+      url(${societyObj.banner.data.attributes.url})`};
   } catch {
     bgStyle = {
       backgroundColor: "black",
@@ -45,24 +45,28 @@ const SocietyBanner = ( {societyObj} ) => {
               <h3 className="societybanner-title" style={{color: "white"}}>Societies</h3>
               <h1 className="societybanner-content" style={{color: "white"}}> 
                 <span className="societybanner-line" style={{color: "white"}}></span>
-                {societyObj.title} 
+                {societyObj.fullName}
               </h1>
             </div>
             <div className="societybanner-right">
-              <p> 
-                <span className="societybanner-nature" style={{
+              <p> Also known as: <b>{societyObj.shortName}</b> <span className="societybanner-nature" style={{
                   backgroundColor: tagToColor.find((obj) => {return obj.key === finalKey}).bkgColor,
                   color: tagToColor.find((obj) => {return obj.key === finalKey}).textColor,
                 }}>
-                  {societyObj.nature}
-                </span>
+                  Nature: {societyObj.nature}
+                </span> 
               </p>
+
+              {societyObj.mailingList && <a 
+                style={{textDecoration: "none"}}
+                href={societyObj.mailingList}><button className="societybanner-register">Mailing List</button></a>}
               <div>
-                {societyObj.email && (<a href={`mailto:${societyObj.email}`}><i className="fa-solid fa-envelope fa-3x"></i> </a>)}
-                {societyObj.websiteLink && (<a href={societyObj.websiteLink}><i className="fa-solid fa-globe fa-3x"></i> </a>)}
-                {societyObj.facebookLink && (<a href={societyObj.facebookLink}><i className="fa-brands fa-facebook fa-3x"></i> </a>)}
-                {societyObj.twitterLink && (<a href={societyObj.twitterLink}><i className="fa-brands fa-twitter fa-3x"></i> </a>)}
-                {societyObj.instagramLink && (<a href={societyObj.instagramLink}><i className="fa-brands fa-instagram fa-3x"></i> </a>)}
+                {societyObj.email && (<><a href={`mailto:${societyObj.email}`}><i className="fa-solid fa-envelope fa-3x"></i></a> </>)}
+                {societyObj.websiteLink && (<><a href={societyObj.websiteLink}><i className="fa-solid fa-globe fa-3x"></i></a> </>)}
+                {societyObj.facebookLink && (<><a href={societyObj.facebookLink}><i className="fa-brands fa-facebook fa-3x"></i></a> </>)}
+                {societyObj.twitterLink && (<><a href={societyObj.twitterLink}><i className="fa-brands fa-twitter fa-3x"></i></a> </>)}
+                {societyObj.instagramLink && (<><a href={societyObj.instagramLink}><i className="fa-brands fa-instagram fa-3x"></i></a> </>)}
+                {societyObj.whatsappLink && (<><a href={societyObj.whatsappLink}><i className="fa-brands fa-whatsapp fa-3x"></i></a> </>)}
               </div>
             </div>
           </div>

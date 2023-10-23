@@ -64,12 +64,8 @@
 }
 
 .societybanner-nature {
-    font-size: .9rem;
+    /* font-size: 1.5rem; */
     padding-inline: .25rem;
-}
-
-.societybanner-nature + .societybanner-nature {
-    margin-left: .25rem;
 }
 
 .societybanner-register {

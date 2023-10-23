@@ -12,7 +12,7 @@ const AllSocieties = () => {
   const [societies, setSocieties] = useState([]);
 
   const fetchComm = async () => {
-    const BaseURL = "http://localhost:1337/api";
+    const BaseURL = "https://samuelchlam.herokuapp.com/api";
     const resSocieties = await axios.get(
       `${BaseURL}/societies?populate=banner`).then().catch(e => {console.log(e)});
     setSocieties(resSocieties.data.data);
@@ -40,7 +40,7 @@ const AllSocieties = () => {
           let bG
           
           if (soc.attributes.banner) {
-            bG = `url("http://localhost:1337${soc.attributes.banner.data.attributes.url}")`;
+            bG = `url("${soc.attributes.banner.data.attributes.url}")`;
           } else {
             bG = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("${default_img_src}")`;
           }
@@ -65,7 +65,7 @@ const AllSocieties = () => {
               <div className="CurrentComm-background" style={{backgroundImage: bG}}> </div>
               <div className="CurrentComm-about"> 
                   <div className="name"> 
-                    <b>{soc.attributes.title} </b> 
+                    <b>{soc.attributes.shortName} </b> 
                     <span className="societybanner-nature" style={{
                       backgroundColor: tagToColor.find((obj) => {return obj.key === finalKey}).bkgColor,
                       color: tagToColor.find((obj) => {return obj.key === finalKey}).textColor,
